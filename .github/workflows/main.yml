@@ -6,8 +6,6 @@ on:
       - main
   schedule:
     - cron: '0 12 * * *'
-  workflow_dispatch:  # Enable manual trigger
-
   
 jobs:
   build:
