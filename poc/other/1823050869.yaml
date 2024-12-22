@@ -1,10 +1,11 @@
 id: rtsp
 info:
-  name: Hikvision DVR rtspd
+  name: Arecont Vision surveillance camera rtspd
   author: nmap,cn-kali-team
   tags: detect,tech,rtsp,service
   severity: info
   metadata:
+    device_type: webcam
     fallback:
     - get-request
     rarity: 5
@@ -19,4 +20,4 @@ tcp:
   - name: rtsp
     type: regex
     regex:
-    - '^RTSP/1\.0 200 OK\r\nPublic: OPTIONS, DESCRIBE, SETUP, PLAY, TEARDOWN, PAUSE\r\n\r\n$'
+    - '^RTSP/1\.0 401 Unauthorized\r\nCSeq: 0\r\nWWW-Authenticate: Basic realm=\"Arecont Vision\"\r\n\r\n'

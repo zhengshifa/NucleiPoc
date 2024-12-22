@@ -1,17 +1,13 @@
 id: nntp
 info:
-  name: INN nntpd
+  name: Colobus nntpd
   author: nmap,cn-kali-team
   tags: detect,tech,nntp,service
   severity: info
   metadata:
     hostname: $1
-    info: on Debian; posting ok
-    operating_system: Linux
-    product: inn
+    info: posting ok
     rarity: 0
-    vendor: isc
-    verified: true
     version: $2
 tcp:
 - name: 'null'
@@ -23,4 +19,4 @@ tcp:
   - name: nntp
     type: regex
     regex:
-    - ^200 ([-\w_.]+) InterNetNews NNRP server INN ([\d.]+) .* \(Debian\) ready \(posting ok\)\.\r\n
+    - ^200 ([-\w_.]+) - colobus ([\d.]+) ready - \(posting ok\)\.\r\n

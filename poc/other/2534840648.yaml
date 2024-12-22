@@ -1,15 +1,16 @@
 id: imap
 info:
-  name: Lotus Domino imapd
+  name: Cyrus imapd
   author: nmap,cn-kali-team
   tags: detect,tech,imap,service
   severity: info
   metadata:
-    product: lotus_domino
+    hostname: $1
+    product: cyrus_imap_server
     rarity: 0
-    vendor: ibm
+    vendor: cmu
     verified: true
-    version: $1
+    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +21,4 @@ tcp:
   - name: imap
     type: regex
     regex:
-    - ^\* OK Domino IMAP4 Server Build V([\w_]+ Beta \w+) ready .*\r\n
+    - ^\* OK \[CAPABILITY IMAP4rev1 [^]]*\] ([-.\w]+) Cyrus IMAP (\d[\w.-]+) server ready\r\n

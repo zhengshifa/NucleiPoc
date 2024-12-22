@@ -1,13 +1,14 @@
 id: smtp
 info:
-  name: mxl smtpd
+  name: IronPort C-60 smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
+    device_type: specialized
     hostname: $1
+    operating_system: AsyncOS
     rarity: 0
-    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +19,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^220 (\S+) ESMTP mxl_mta-(\d[^\;]+);
+    - ^220-([-\w_.]+) ESMTP\r\n220 [-\w_.]+ AsyncOS\r\n

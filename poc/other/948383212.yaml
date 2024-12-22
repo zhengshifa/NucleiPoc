@@ -1,15 +1,13 @@
 id: pop3
 info:
-  name: NetMail pop3d
+  name: WorkgroupMail pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
     hostname: $1
-    product: netmail
+    operating_system: Windows
     rarity: 0
-    vendor: novell
-    verified: true
     version: $2
 tcp:
 - name: 'null'
@@ -21,4 +19,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - '^\+OK ([-\w_.]+) NetMail POP3 Agent \$R...sion:   ([\d.]+)  \$\r\n'
+    - ^\+OK ([-\w_.]+) POP3 WorkgroupMail ([\d.]+) .*\r\n

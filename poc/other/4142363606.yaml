@@ -1,12 +1,17 @@
 id: pop3
 info:
-  name: cppop pop3d
+  name: MDaemon pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
     hostname: $1
+    info: Spanish
+    operating_system: Windows
+    product: mdaemon
     rarity: 0
+    vendor: altn
+    verified: true
     version: $2
 tcp:
 - name: 'null'
@@ -18,4 +23,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK POP3 ([-\w_.]+) \[cppop (\d[^]]+)\] at \[
+    - ^\+OK ([-\w_.]+) POP MDaemon ([\d.]+) listo <MDAEMON-[\w.]+@[-\w_.]+>\r\n

@@ -1,24 +1,23 @@
 id: http-proxy
 info:
-  name: Squid
+  name: tinyproxy http proxy
   author: nmap,cn-kali-team
   tags: detect,tech,http-proxy,service
   severity: info
   metadata:
-    product: squid
-    rarity: 8
-    vendor: squid-cache
+    product: tinyproxy
+    rarity: 0
+    vendor: banu
     verified: true
     version: $1
 tcp:
-- name: nessus-tpv10
+- name: 'null'
   inputs:
-  - data: < NTP/1.0 >\n
+  - data: ''
   host:
   - '{{Hostname}}'
-  port: '1241'
   extractors:
   - name: http-proxy
     type: regex
     regex:
-    - '^HTTP/1\.0 400 Bad Request\r\nServer: squid/([\w._+-]+)\r\n'
+    - '^HTTP/1\.0 408 Timeout\r\nServer: tinyproxy/([\w._-]+)\r\nContent-Type: text/html\r\nConnection: close\r\n\r\n'

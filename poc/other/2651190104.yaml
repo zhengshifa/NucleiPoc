@@ -1,15 +1,12 @@
 id: smtp
 info:
-  name: qmail smtpd
+  name: Small Home Server smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
-    operating_system: Unix
-    product: qmail
+    operating_system: Windows
     rarity: 0
-    vendor: djb
-    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +17,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^451 Temporary local problem - please try later\r\n
+    - ^220 shttp\.srv Simple Mail Transfer Service Ready\r\n

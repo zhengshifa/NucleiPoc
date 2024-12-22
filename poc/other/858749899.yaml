@@ -1,15 +1,14 @@
 id: sip
 info:
-  name: Genexis DRG $1 SIP
+  name: SJphone SIP client
   author: nmap,cn-kali-team
   tags: detect,tech,sip,service
   severity: info
   metadata:
-    device_type: broadband router
     fallback:
     - get-request
     rarity: 5
-    version: $2
+    version: $1
 tcp:
 - name: sipoptions
   inputs:
@@ -21,4 +20,4 @@ tcp:
   - name: sip
     type: regex
     regex:
-    - '(?i)^SIP/2\.0 400 Invalid Via Port 0\r\n(?:[^\r\n]+\r\n)*?User-Agent: drgos-drg(\d+)-([\w._-]+)\r\n'
+    - '(?i)^SIP/2\.0 405 Method Not Allowed.*\r\nServer: SJphone/([-\w_.]+) \(SJ Labs\)\r\n'

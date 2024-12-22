@@ -1,16 +1,11 @@
 id: ftp-proxy
 info:
-  name: AnalogX FTP proxy
+  name: Sidewinder FTP proxy
   author: nmap,cn-kali-team
   tags: detect,tech,ftp-proxy,service
   severity: info
   metadata:
-    hostname: $1
-    product: proxy
     rarity: 0
-    vendor: analogx
-    verified: true
-    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +16,4 @@ tcp:
   - name: ftp-proxy
     type: regex
     regex:
-    - ^220 ([-.+\w]+) FTP AnalogX Proxy (\d[-.\w]+) \(Release\) ready\r\n
+    - (?i)^220-\r\x0a220-Sidewinder ftp proxy

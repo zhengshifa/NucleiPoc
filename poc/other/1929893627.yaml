@@ -1,15 +1,15 @@
 id: rtsp
 info:
-  name: Helix DNA Server Plus
+  name: VODServer rtspd
   author: nmap,cn-kali-team
   tags: detect,tech,rtsp,service
   severity: info
   metadata:
     fallback:
     - get-request
-    operating_system: Windows
+    info: HiIpcam $1
     rarity: 5
-    version: $1
+    version: $2
 tcp:
 - name: rtsprequest
   inputs:
@@ -21,4 +21,4 @@ tcp:
   - name: rtsp
     type: regex
     regex:
-    - '(?i)^RTSP/1\.0 200 OK\r\n(?:[^\r\n]+\r\n)*?Server: Helix [\w ]*Server Plus Version ([\d.]+) \(win32\)'
+    - '^RTSP/1\.0 200 OK\r\nServer: HiIpcam/([\w._-]+) VodServer/([\w._-]+)\r\nPublic: OPTIONS, DESCRIBE, SETUP, TEARDOWN, PLAY,SET_PARAMETER,GET_PARAMETER\r\n\r\n'

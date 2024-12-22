@@ -1,14 +1,15 @@
 id: ftp
 info:
-  name: CommuniGate Pro ftpd
+  name: pyftpdlib
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    product: communigate_pro
+    product: pyftpdlib
     rarity: 0
-    vendor: stalker
+    vendor: giampaolo_rodola
     verified: true
+    version: 1.0.0 or later
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +20,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^220 CommuniGate Pro FTP Server ready\r\n
+    - ^220 pyftpdlib based ftpd ready\.\r\n

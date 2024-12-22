@@ -1,16 +1,13 @@
 id: nntp
 info:
-  name: INN nntpd
+  name: sn nntpd
   author: nmap,cn-kali-team
   tags: detect,tech,nntp,service
   severity: info
   metadata:
-    hostname: $1
-    product: inn
+    info: posting ok
     rarity: 0
-    vendor: isc
-    verified: true
-    version: $2
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +18,4 @@ tcp:
   - name: nntp
     type: regex
     regex:
-    - ^200 ([-\w_.]+) InterNetNews (?:NNRP )?server INN ([\d.]+) .* ready\r\n
+    - ^200 Hi, you can post \(sn version ([\w.]+)\)\r\n

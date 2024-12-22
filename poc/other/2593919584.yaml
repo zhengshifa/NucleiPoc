@@ -1,13 +1,14 @@
 id: ldap
 info:
-  name: PGP Corp. PGP Keyserver
+  name: UnboundID LDAP SDK
   author: nmap,cn-kali-team
   tags: detect,tech,ldap,service
   severity: info
   metadata:
-    product: keyserver
+    info: access denied
+    product: ldap-sdk
     rarity: 6
-    vendor: pgp
+    vendor: unboundid
     verified: true
 tcp:
 - name: ldapbind-req
@@ -20,4 +21,4 @@ tcp:
   - name: ldap
     type: regex
     regex:
-    - '^0\x17\x02\x01\x01a\x12\n\x01\0\x04\0\x04\x0bPGPError #0$'
+    - ^0\x81\xa0\x02\x01\x01a\x81\x9a\n\x011\x04\0\x04\x81\x92The server has been configured to only allow bind operations that result in authenticated connections\.  Anonymous bind operations are not allowed\.

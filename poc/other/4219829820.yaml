@@ -1,11 +1,11 @@
 id: telnet
 info:
-  name: Enterasys XSR Security Router telnetd
+  name: Reincarna/Linux.Wifatch virus
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    device_type: router
+    info: '**MALWARE**'
     rarity: 0
 tcp:
 - name: 'null'
@@ -17,4 +17,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - ^\xff\xfb\x03\xff\xfd\x01\xff\xfd\x1f\xff\xfb\x05\xff\xfd!
+    - ^\nREINCARNA / Linux\.Wifatch\n\nYour device has been infected by REINCARNA / Linux\.Wifatch\.\n\n

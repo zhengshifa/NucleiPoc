@@ -1,11 +1,11 @@
 id: ftp
 info:
-  name: OpenVMS Secure/IP ftpd
+  name: Novonyx ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    operating_system: OpenVMS
+    operating_system: NetWare
     rarity: 0
     version: $1
 tcp:
@@ -18,4 +18,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^211 Hello \[[-\w_.]+\], Secure/IP Authentication Server ([-\w_.]+) at your service\.\r\n
+    - ^220-  Novonyx FTP Server for NetWare, v([\d.]+) \(

@@ -1,25 +1,22 @@
 id: http
 info:
-  name: thttpd
+  name: Trend Micro OfficeScan Antivirus http config
   author: nmap,cn-kali-team
   tags: detect,tech,http,service
   severity: info
   metadata:
-    device_type: switch
-    info: Asotel Vector 1908 switch http config
-    product: thttpd
-    rarity: 0
-    vendor: acme
-    verified: true
-    version: $1
+    fallback:
+    - get-request
+    rarity: 9
 tcp:
-- name: 'null'
+- name: office-scan
   inputs:
-  - data: ''
+  - data: GET /?CAVIT HTTP/1.1\r\n\r\n
   host:
   - '{{Hostname}}'
+  port: '12345'
   extractors:
   - name: http
     type: regex
     regex:
-    - '^HTTP/1\.0 400 Bad Request\r\nServer: httpd-impacct/([^\r\n]+)\r\nContent-type: text/html\r\n\r\n<HTML><HEAD><TITLE>400 Bad Request</TITLE></HEAD>\n<BODY BGCOLOR=\"#cc9999\"><H2>400 Bad Request</H2>\nYour request has bad syntax or is inherently impossible to satisfy\.\n<HR>\n</HTML>\n$'
+    - '^HTTP/1.0 \d\d\d .*\r\nServer: OfficeScan Client'

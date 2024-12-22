@@ -1,17 +1,12 @@
 id: nntp
 info:
-  name: Lotus Domino nntpd
+  name: Kerio MailServer nntpd
   author: nmap,cn-kali-team
   tags: detect,tech,nntp,service
   severity: info
   metadata:
-    info: posting ok
-    operating_system: $1
-    product: lotus_domino
     rarity: 0
-    vendor: ibm
-    verified: true
-    version: $2
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -22,4 +17,4 @@ tcp:
   - name: nntp
     type: regex
     regex:
-    - ^200 Lotus Domino NNTP Server for ([-./\w]+) \(Release (\d[-.\w]+), .*\) - OK to post\r\n$
+    - ^200 +Kerio MailServer ([\w._-]+) +NNTP server ready\r\n

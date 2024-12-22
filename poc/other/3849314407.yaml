@@ -1,10 +1,13 @@
 id: http
 info:
-  name: Remote Potato media player
+  name: httpd_gargoyle
   author: nmap,cn-kali-team
   tags: detect,tech,http,service
   severity: info
   metadata:
+    device_type: WAP
+    info: Gargoyle WAP firmware
+    operating_system: Linux
     rarity: 0
     version: $1
 tcp:
@@ -17,4 +20,4 @@ tcp:
   - name: http
     type: regex
     regex:
-    - '^HTTP/1\.1 405 Method Not Allowed\r\nServer: remote-potato-v([\w._-]+)\r\n'
+    - '^\(null\) 400 Bad Request\r\nServer: httpd_gargoyle/([\w._ -]+)\r\n'

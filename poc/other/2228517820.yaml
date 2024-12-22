@@ -1,13 +1,16 @@
 id: ftp
 info:
-  name: Tenor Multipath Switch ftpd
+  name: Oracle XML DB ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    device_type: switch
-    operating_system: VxWorks $1
+    hostname: $1
+    product: database_server
     rarity: 0
+    vendor: oracle
+    verified: true
+    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +21,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^220 <\w+>  Tenor Multipath Switch FTP server \(Version VxWorks([\w._-]+)\) ready\.\r\n
+    - (?i)^(?:220-.*\r\n)?220 ([-\w_.]+) FTP Server \(Oracle XML DB/Oracle9i Release ([\d.]+) - Production\) ready\.\r\n

@@ -1,16 +1,15 @@
 id: pop3
 info:
-  name: Cyrus pop3d
+  name: XMail pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
     hostname: $1
-    info: Mac OS X $3
-    operating_system: Mac OS X
-    product: cyrus_imap_server
+    operating_system: Linux
+    product: xmail
     rarity: 0
-    vendor: cmu
+    vendor: davide_libenzi
     verified: true
     version: $2
 tcp:
@@ -23,4 +22,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK ([-.\w]+) Cyrus POP3 v(\d[-.\w]+)-OS X ([\d.]+) server ready <
+    - '^\+OK <[\d.]+@([-\w_.]+)> \[XMail ([\d.]+) \(Linux/Ix86\) POP3 Server\] service ready; '

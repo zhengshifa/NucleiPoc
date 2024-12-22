@@ -1,16 +1,13 @@
 id: ftp
 info:
-  name: Microsoft IIS ftpd
+  name: Lexmark C500 printer ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    info: IP address rejected
-    operating_system: Windows
-    product: internet_information_services
+    device_type: printer
     rarity: 0
-    vendor: microsoft
-    verified: true
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +18,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^530 Connection refused, unknown IP address\.\r\n$
+    - ^220 C500 FTP Server ([\w._-]+) ready\.\n

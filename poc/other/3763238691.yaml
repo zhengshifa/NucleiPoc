@@ -1,12 +1,13 @@
 id: ftp
 info:
-  name: DrFTPD
+  name: KarjaSoft Sami ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
+    operating_system: Windows
     rarity: 0
-    version: $1 revision $2
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +18,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - '^220 DrFTPD\+ ([\w._-]+) \(\+STABLE\+\) \$Revision: (\d+) \$ http://drftpd\.org\r\n'
+    - ^220-Sami FTP Server ([\w._-]+)\r\n

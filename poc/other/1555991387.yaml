@@ -1,14 +1,13 @@
 id: nntp
 info:
-  name: Microsoft NNTP Service
+  name: Jana nntpd
   author: nmap,cn-kali-team
   tags: detect,tech,nntp,service
   severity: info
   metadata:
-    info: Spanish
+    info: posting ok
     operating_system: Windows
     rarity: 0
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +18,4 @@ tcp:
   - name: nntp
     type: regex
     regex:
-    - '^200 Servicio NNTP ([\w._-]+) Version: [\w._-]+ Posting Allowed \r\n'
+    - ^200 Jana news server ready - posting allowed\r\n

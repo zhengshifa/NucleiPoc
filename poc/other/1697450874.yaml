@@ -1,13 +1,12 @@
 id: rtsp
 info:
-  name: Helix DNA Server
+  name: H264DVR rtspd
   author: nmap,cn-kali-team
   tags: detect,tech,rtsp,service
   severity: info
   metadata:
     fallback:
     - get-request
-    operating_system: Windows
     rarity: 5
     version: $1
 tcp:
@@ -21,4 +20,4 @@ tcp:
   - name: rtsp
     type: regex
     regex:
-    - '(?i)^RTSP/1\.0 200 OK\r\n(?:[^\r\n]+\r\n)*?Server: Helix [\w ]*Server Version ([\d.]+) \(win32\)\r\n'
+    - '^RTSP/1\.0 200 OK\r\nServer: H264DVR ([\d.]+)\r\nPublic: OPTIONS, DESCRIBE, SETUP, TEARDOWN, GET_PARAMETER,(?: SET_PARAMETER,) PLAY, PAUSE\r\n\r\n'

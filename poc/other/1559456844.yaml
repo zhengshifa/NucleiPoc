@@ -1,11 +1,11 @@
 id: nntp
 info:
-  name: INN NNTPd
+  name: InterNetNews (INN)
   author: nmap,cn-kali-team
   tags: detect,tech,nntp,service
   severity: info
   metadata:
-    info: broken
+    info: HDD full
     product: inn
     rarity: 0
     vendor: isc
@@ -20,4 +20,4 @@ tcp:
   - name: nntp
     type: regex
     regex:
-    - '^nnrpd: invalid option -- S\nUsage error\.\n'
+    - ^400 No space left on device writing SMstore file -- throttling\r\n

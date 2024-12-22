@@ -1,15 +1,17 @@
 id: smtp
 info:
-  name: Citadel smtpd
+  name: Alt-N MDaemon mail server
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
     hostname: $1
-    product: ux
+    operating_system: Windows
+    product: mdaemon
     rarity: 0
-    vendor: citadel
+    vendor: altn
     verified: true
+    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +22,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^220 ([\w_.-]+) ESMTP Citadel server ready\.\r\n
+    - '^220[ -]([-.\w]+) ESMTP MDaemon (\d[-.\w]+); '

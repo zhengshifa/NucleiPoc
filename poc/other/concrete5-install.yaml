@@ -3,9 +3,7 @@ info:
   name: Concrete5 Install Panel
   author: osamahamad,princechaddha
   severity: critical
-  description: A Concrete5 installation panel was discovered.
-  reference:
-    - https://documentation.concretecms.org/developers/introduction/installing-concrete-cms
+  reference: https://documentation.concretecms.org/developers/introduction/installing-concrete-cms
   metadata:
     shodan-query: http.title:"Install concrete5"
   tags: panel,concrete,cms
@@ -29,5 +27,3 @@ requests:
         group: 1
         regex:
           - 'Version ([0-9.]+)'
-
-# Enhanced by mp on 2022/03/21

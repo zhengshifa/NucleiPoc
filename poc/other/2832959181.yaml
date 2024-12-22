@@ -1,15 +1,12 @@
 id: irc
 info:
-  name: BitlBee ircd
+  name: Minbif ircd
   author: nmap,cn-kali-team
   tags: detect,tech,irc,service
   severity: info
   metadata:
     hostname: $1
-    product: bitlbee
     rarity: 0
-    vendor: bitlbee
-    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +17,4 @@ tcp:
   - name: irc
     type: regex
     regex:
-    - ^:([\w._-]+) NOTICE \* :BitlBee-IRCd initialized, please go on\r\n
+    - ^:([\w._-]+) NOTICE AUTH :Minbif-IRCd initialized, please go on\r\n

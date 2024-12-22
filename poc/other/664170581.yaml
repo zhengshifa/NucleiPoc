@@ -1,15 +1,15 @@
 id: imap
 info:
-  name: Netscape Messaging Server Imapd
+  name: University of Washington IMAP imapd
   author: nmap,cn-kali-team
   tags: detect,tech,imap,service
   severity: info
   metadata:
     hostname: $1
-    info: built $3
-    product: messaging_server
+    info: 'time zone: $3'
+    product: uw_imap
     rarity: 0
-    vendor: netscape
+    vendor: uw
     verified: true
     version: $2
 tcp:
@@ -22,4 +22,4 @@ tcp:
   - name: imap
     type: regex
     regex:
-    - ^\* OK ([-.\w]+) IMAP4 service \(Netscape Messaging Server (\d[-.\w ]+) \(built ([\w ]+)\)\)\r\n
+    - ^\* OK \[CAPABILITY IMAP4REV1 [^]]+\] \[([\w.-]+)\] IMAP4rev1 (20\w+\.\d+) at [ \w,:]+ ([+-]\d+) \(\w+\)\r\n

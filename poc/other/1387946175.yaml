@@ -1,15 +1,13 @@
 id: pop3
 info:
-  name: Microsoft Exchange pop3d
+  name: Dovecot pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
-    hostname: $1
-    operating_system: Windows
-    product: exchange_server
+    product: dovecot
     rarity: 0
-    vendor: microsoft
+    vendor: dovecot
     verified: true
 tcp:
 - name: 'null'
@@ -21,4 +19,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK Authorized Users Only! \(([-\w_.]+)\)\r\n
+    - ^\+OK Dovecot ready -

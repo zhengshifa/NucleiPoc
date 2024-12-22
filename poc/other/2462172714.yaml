@@ -1,16 +1,16 @@
 id: ftp
 info:
-  name: Apache mod_ftpd
+  name: ProFTPD
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    hostname: $1
-    product: http_server
+    operating_system: Unix
+    product: proftpd
     rarity: 0
-    vendor: apache
+    vendor: proftpd
     verified: true
-    version: $2
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +21,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^220 ([-\w_.]+) FTP server ready \(mod_ftpd/([\d.]+)\)\r\n
+    - (?i)^220-.*\r\n220 ProFTPD ([\d.]+) Server

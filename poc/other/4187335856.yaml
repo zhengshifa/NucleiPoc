@@ -1,14 +1,16 @@
 id: pop3
 info:
-  name: Dovecot pop3d
+  name: Microsoft Exchange pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
-    product: dovecot
+    info: Dutch
+    product: exchange_server
     rarity: 0
-    vendor: dovecot
+    vendor: microsoft
     verified: true
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +21,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK Pop3 ready\.\r\n
+    - ^\+OK Microsoft Exchange POP3-server versie ([\d.]+) is gereed\.\r\n

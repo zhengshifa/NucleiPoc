@@ -1,14 +1,11 @@
 id: domain
 info:
-  name: NLnet Labs NSD
+  name: UltraDNS Resolver
   author: nmap,cn-kali-team
   tags: detect,tech,domain,service
   severity: info
   metadata:
-    product: nsd
     rarity: 1
-    vendor: nlnetlabs
-    verified: true
 tcp:
 - name: dnsversion-bind-req
   inputs:
@@ -20,4 +17,4 @@ tcp:
   - name: domain
     type: regex
     regex:
-    - ^(?:..)?\0\x06\x81\x05\0\x01\0\0\0\0\0\0\x07version\x04bind\0\0\x10\0\x03
+    - (?i)\x07version\x04bind\0\0\x10\0\x03\x07VERSION\x04BIND\0\0\x10\0\x03.{7}UltraDNS Resolver

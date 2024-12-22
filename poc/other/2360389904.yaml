@@ -1,11 +1,12 @@
 id: smtp
 info:
-  name: VisNetic MailScan ESMTP server
+  name: DynFX smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
     hostname: $1
+    operating_system: Windows
     rarity: 0
     version: $2
 tcp:
@@ -18,4 +19,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^220 Welcome to ([-.\w]+) - VisNetic MailScan ESMTP Server BUILD (\d[-.\w]+)\r\n
+    - ^220 ([-\w_.]+) DynFX ESMTP Server ([-\w_.]+) \(

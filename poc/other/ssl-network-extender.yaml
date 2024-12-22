@@ -1,4 +1,5 @@
 id: ssl-network-extender
+
 info:
   name: Check Point SSL Network Extender Login
   author: idealphase
@@ -11,16 +12,19 @@ info:
     shodan-query: http.title:"Check Point SSL Network Extender"
     google-query: intitle:"SSL Network Extender Login"
   tags: panel,checkpoint,router
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/login.html"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "<TITLE>SSL Network Extender Login</TITLE>"
+
       - type: status
         status:
           - 200

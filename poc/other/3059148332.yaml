@@ -1,10 +1,11 @@
 id: pop3
 info:
-  name: Zoe Java pop3d
+  name: Scalix pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
+    hostname: $1
     rarity: 0
 tcp:
 - name: 'null'
@@ -16,4 +17,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK Hi\r\n
+    - '^\+OK Scalix POP3 interface ready on: ([-\w_.]+)\r\n'

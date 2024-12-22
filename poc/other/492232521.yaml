@@ -1,16 +1,14 @@
 id: ftp
 info:
-  name: Serv-U ftpd
+  name: Konica Minolta printer ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    operating_system: Windows
-    product: serv-u
+    device_type: printer
+    hostname: $1
     rarity: 0
-    vendor: serv-u
-    verified: true
-    version: $1
+    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +19,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^220 Serv-U FTP-Server v([-\w_.]+ build \d+) for WinSock ready\.\.\.\r\n
+    - ^220 ([-\w_.]+) FTP server \(KONICA FTPD version ([\d.]+)\) ready\.\r\n

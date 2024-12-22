@@ -1,11 +1,12 @@
 id: telnet
 info:
-  name: Microsoft Windows 2000 telnetd
+  name: Intel NetportExpress print server telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    operating_system: Windows
+    device_type: print server
+    info: Model $1
     rarity: 0
 tcp:
 - name: 'null'
@@ -17,4 +18,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - ^\xff\xfb\x01\xff\xfb\x03\xff\xfd'\xff\xfd\x1f\xff\xfd\0\xff\xfb\0Welcome to Microsoft Telnet Service \r\n
+    - '^\xff\xfb\x01\r\nNetportExpress\(tm\) ([-/.+\w]+)\r\n.*\r\n\r\nlogin: '

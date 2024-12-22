@@ -1,13 +1,11 @@
 id: telnet
 info:
-  name: Tenor telnetd
+  name: Foundry Networks telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    info: on Multipath Switch
     rarity: 0
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +16,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - '(?i)^Welcome to Tenor Multipath Switch Telnet Server.*Type: (\S+)'
+    - '^\xff\xfb\x01\xff\xfb\x03\r\nUser Access Verification\r\n\r\nPlease Enter Password: '
