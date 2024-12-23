@@ -1,11 +1,11 @@
 id: http
 info:
-  name: MenuetOS webcam server
+  name: Motorola NVG589 DSL modem http admin
   author: nmap,cn-kali-team
   tags: detect,tech,http,service
   severity: info
   metadata:
-    operating_system: MenuetOS
+    device_type: broadband router
     rarity: 0
 tcp:
 - name: 'null'
@@ -17,4 +17,4 @@ tcp:
   - name: http
     type: regex
     regex:
-    - '^HTTP/1\.1 200 OK\r\nServer: Menuet\r\nConnection: close\r\nContent-Length: 0\d+\r\nContent-Type: image/bmp\r\n\r\n'
+    - '^HTTP/1\.1 408 Request Timeout\r\nContent-Type: text/html\r\nConection: close\r\n\r\n<html>\n<head>\n<title>408 Request Timeout</title>\n</head>\n<body>\n<h1>408 Request Timeout</h1>\n</body>\n</html>\n'

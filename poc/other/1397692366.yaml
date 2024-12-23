@@ -1,18 +1,12 @@
 id: imap
 info:
-  name: Microsoft Exchange 2003 imapd
+  name: SeattleLab SLMail imapd
   author: nmap,cn-kali-team
   tags: detect,tech,imap,service
   severity: info
   metadata:
-    hostname: $2
-    info: German
     operating_system: Windows
-    product: exchange_server
     rarity: 0
-    vendor: microsoft
-    verified: true
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -23,4 +17,4 @@ tcp:
   - name: imap
     type: regex
     regex:
-    - ^\* OK Der Microsoft Exchange Server 2003 IMAP4rev1-Server, Version ([\d.]+) \(([-\w_.]+)\), steht zur Verf\xfcgung\.\r\n
+    - ^\* OK Welcome to the SLnet IMAP Service\r\n
