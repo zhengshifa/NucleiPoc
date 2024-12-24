@@ -1,12 +1,13 @@
 id: smtp
 info:
-  name: fssmtpd
+  name: IronPort mail appliance smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
+    hostname: $1
+    info: access denied
     rarity: 0
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +18,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^220 \S+ \S+ ESMTP receiver fssmtpd(\d+) ready
+    - ^554-([\w._-]+)\r\n554 Your access to this mail system has been rejected due to the sending MTA's poor reputation\. If you believe that this failure is in error, please contact the intended recipient via alternate means\.\r\n

@@ -1,12 +1,13 @@
 id: imap
 info:
-  name: DBOX DKIMAP4 imapd
+  name: Netscape imapd
   author: nmap,cn-kali-team
   tags: detect,tech,imap,service
   severity: info
   metadata:
-    hostname: $1
+    hostname: $2
     rarity: 0
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +18,4 @@ tcp:
   - name: imap
     type: regex
     regex:
-    - ^\* OK ([-\w_.]+) DKIMAP4 IMAP Server\r\n
+    - ^\* OK Netscape IMAP4rev1 Service ([\d.]+) on ([-\w_.]+) at .*\r\n
