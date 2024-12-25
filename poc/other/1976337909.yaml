@@ -1,12 +1,11 @@
 id: backdoor
 info:
-  name: Theef trojan
+  name: netcat -e
   author: nmap,cn-kali-team
   tags: detect,tech,backdoor,service
   severity: info
   metadata:
-    info: '**BACKDOOR**'
-    operating_system: Windows
+    info: misconfigured
     rarity: 0
 tcp:
 - name: 'null'
@@ -18,4 +17,4 @@ tcp:
   - name: backdoor
     type: regex
     regex:
-    - ^\xfa\xcb\xd9\xd9\xdd\xc5\xd8\xce\xd6
+    - '^exec .* failed : No such file or directory\n$'
