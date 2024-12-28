@@ -1,17 +1,13 @@
 id: pop3
 info:
-  name: Cyrus pop3d
+  name: WorkgroupMail pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
     hostname: $1
-    info: Red Hat
-    operating_system: Linux
-    product: cyrus_imap_server
+    operating_system: Windows
     rarity: 0
-    vendor: cmu
-    verified: true
     version: $2
 tcp:
 - name: 'null'
@@ -23,4 +19,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK ([-.\w]+) Cyrus POP3 v(\d[-.\w]+)-Red Hat [-\d.]+ server ready <
+    - ^\+OK ([-\w_.]+) POP3 WorkgroupMail ([\d.]+) .*\r\n
