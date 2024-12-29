@@ -1,12 +1,15 @@
 id: ssh
 info:
-  name: Adtran Netvanta RomCliSecure sshd
+  name: ConfD sshd
   author: nmap,cn-kali-team
   tags: detect,tech,ssh,service
   severity: info
   metadata:
     info: protocol $1
+    product: confd
     rarity: 0
+    vendor: tail-f
+    verified: true
     version: $2
 tcp:
 - name: 'null'
@@ -18,4 +21,4 @@ tcp:
   - name: ssh
     type: regex
     regex:
-    - ^SSH-([\d.]+)-RomCliSecure_([\d.]+)\r?\n
+    - ^SSH-([\d.]+)-ConfD-([\w._-]+)\r\n
