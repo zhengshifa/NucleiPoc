@@ -1,12 +1,13 @@
 id: smtp
 info:
-  name: ModusMail smtpd
+  name: OpenVMS smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
     hostname: $1
-    operating_system: Windows
+    info: OpenVMS $3; Alpha
+    operating_system: OpenVMS
     rarity: 0
     version: $2
 tcp:
@@ -19,4 +20,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^220 ([-\w_.]+) ModusMail ESMTP Receiver Version ([\d.]+) Ready\r\n
+    - ^220 ([-\w_.]+) V([\w._-]+), OpenVMS V([\w._-]+) Alpha ready at .* \r\n
