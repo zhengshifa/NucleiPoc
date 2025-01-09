@@ -1,13 +1,12 @@
 id: smtp
 info:
-  name: WinWebMail smtpd
+  name: PostCast smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
     operating_system: Windows
     rarity: 0
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +17,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^220 ESMTP on WinWebMail \[([\d.]+)\] ready\.  http://www\.winwebmail
+    - ^220 PostCast SMTP server \(http://www\.postcastserver\.com/\) ready at .*\r\n
