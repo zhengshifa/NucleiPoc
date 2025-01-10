@@ -1,15 +1,14 @@
 id: nntp
 info:
-  name: Kerio Connect nntpd
+  name: Diablo nntpd
   author: nmap,cn-kali-team
   tags: detect,tech,nntp,service
   severity: info
   metadata:
-    product: connect
+    hostname: $1
+    operating_system: Unix
     rarity: 0
-    vendor: kerio
-    verified: true
-    version: $1
+    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +19,4 @@ tcp:
   - name: nntp
     type: regex
     regex:
-    - ^200 Kerio Connect ([\w._-]+) NNTP server ready\r\n
+    - '^502 ([-\w_.]+): Transfer permission denied to [\d.]+ - [-\w_.@]+ \(DIABLO ([-\w_.]+)\)\r\n'
