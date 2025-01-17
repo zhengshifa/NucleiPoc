@@ -1,16 +1,12 @@
 id: pop3
 info:
-  name: UW Imap pop3d
+  name: popper pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
-    hostname: $1
-    product: imap_toolkit
+    info: Misconfigured
     rarity: 0
-    vendor: uw
-    verified: true
-    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +17,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK POP3 \[([-\w_.]+)\] v([\d.]+) server ready\r\n
+    - ^Unable to open trace file \"/var/spool/popper/
