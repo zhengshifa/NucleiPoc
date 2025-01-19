@@ -1,13 +1,12 @@
 id: nntp
 info:
-  name: JAMES nntpd
+  name: WendzelNNTPd
   author: nmap,cn-kali-team
   tags: detect,tech,nntp,service
   severity: info
   metadata:
-    hostname: $1
-    info: posting ok
     rarity: 0
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +17,4 @@ tcp:
   - name: nntp
     type: regex
     regex:
-    - ^200 ([-\w_.]+) NNTP Service Ready, posting permitted\r\n
+    - ^200 WendzelNNTPd-OSE \(Open Source Edition\) ([\w._-]+) '\w+'  - \([^)]+\) ready \(posting ok\)\.\r\n
