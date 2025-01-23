@@ -1,16 +1,16 @@
 id: ssh
 info:
-  name: Serv-U SSH Server
+  name: GlobalScape CuteFTP sshd
   author: nmap,cn-kali-team
   tags: detect,tech,ssh,service
   severity: info
   metadata:
-    info: protocol $1
-    product: serv-u
+    info: sshlib $2; protocol $1
+    operating_system: Windows
+    product: cuteftp
     rarity: 0
-    vendor: serv-u
+    vendor: globalscape
     verified: true
-    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +21,4 @@ tcp:
   - name: ssh
     type: regex
     regex:
-    - ^SSH-([\d.]+)-Serv-U_([\w._-]+)\r\n
+    - ^SSH-([\d.]+)-([\w.-]+)_sshlib GlobalSCAPE\r\n

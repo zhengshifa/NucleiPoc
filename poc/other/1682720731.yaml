@@ -1,14 +1,11 @@
 id: pop3-proxy
 info:
-  name: Trend Micro IMSS virus scanning POP3 proxy
+  name: Reivernet captive portal pop3 proxy
   author: nmap,cn-kali-team
   tags: detect,tech,pop3-proxy,service
   severity: info
   metadata:
-    hostname: $2
-    operating_system: Windows
     rarity: 0
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +16,4 @@ tcp:
   - name: pop3-proxy
     type: regex
     regex:
-    - ^\+OK TrendMicro IMSS (\d[-.\w ]+) POP3 Proxy at ([-.\w]+)\r\n
+    - ^-ERR Not Enrolled\r\rPlease open your internet browser and accept the terms and conditions of use for this service\.\r\n

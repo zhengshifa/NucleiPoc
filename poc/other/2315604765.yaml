@@ -1,12 +1,11 @@
 id: nntp
 info:
-  name: Netwinsite DNEWS
+  name: NNTPCache
   author: nmap,cn-kali-team
   tags: detect,tech,nntp,service
   severity: info
   metadata:
     hostname: $1
-    info: posting OK
     rarity: 0
     version: $2
 tcp:
@@ -19,4 +18,4 @@ tcp:
   - name: nntp
     type: regex
     regex:
-    - ^200 ([-.\w]+) DNEWS Version *(\d[-.\w]+).*posting OK \r\n
+    - ^20\d ([\w.-_]+) NNTPCache server V([\d.]+) \[see www\.nntpcache\.org\]

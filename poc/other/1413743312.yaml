@@ -1,10 +1,11 @@
 id: sieve
 info:
-  name: Cyrus timsieved Murder
+  name: Cyrus timsieved
   author: nmap,cn-kali-team
   tags: detect,tech,sieve,service
   severity: info
   metadata:
+    operating_system: Mac OS X $2
     product: cyrus_imap_server
     rarity: 0
     vendor: cmu
@@ -20,4 +21,4 @@ tcp:
   - name: sieve
     type: regex
     regex:
-    - ^\"IMPLEMENTATION\" \"Cyrus timsieved \(Murder\) v([-.\w]+)\"\r\n
+    - ^\"IMPLEMENTATION\" \"Cyrus timsieved v([\w_.]+)-OS X ([^"]+)\"\r\n

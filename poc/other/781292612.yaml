@@ -1,13 +1,15 @@
 id: pop3-proxy
 info:
-  name: Trend Micro IMSS virus scanning POP3 proxy
+  name: AVG pop3 proxy
   author: nmap,cn-kali-team
   tags: detect,tech,pop3-proxy,service
   severity: info
   metadata:
-    hostname: $2
     operating_system: Windows
+    product: anti-virus
     rarity: 0
+    vendor: avg
+    verified: true
     version: $1
 tcp:
 - name: 'null'
@@ -19,4 +21,4 @@ tcp:
   - name: pop3-proxy
     type: regex
     regex:
-    - ^\+OK TrendMicro IMSS (\d[-.\w ]+) POP3 Proxy at ([-.\w]+)\r\n
+    - ^\+OK AVG POP3 Proxy Server ([\d/.]+) \[[\w/.]+\]\r\n

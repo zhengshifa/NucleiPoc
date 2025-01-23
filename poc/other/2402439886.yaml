@@ -1,11 +1,11 @@
 id: http
 info:
-  name: Technicolor TG787 VoIP gateway http admin
+  name: Glucose WeatherPop Advanced httpd
   author: nmap,cn-kali-team
   tags: detect,tech,http,service
   severity: info
   metadata:
-    device_type: VoIP adapter
+    operating_system: Mac OS X
     rarity: 0
     version: $1
 tcp:
@@ -18,4 +18,4 @@ tcp:
   - name: http
     type: regex
     regex:
-    - '^HTTP/1\.0 400 Bad Request\r\nServer: Technicolor WebServer/([\w._-]+)\r\nContent-Type: text/html\r\nContent-Length: 58\r\n\r\nHTTP/1\.0 400 Bad Request: Invalid or incomplete request\.\r\n\r\n\r\n$'
+    - '^HTTP/1\.1 \d\d\d .*\r\nContent-Type: text/plain\r\nServer: WPA/([-\w_.]+)\r\n\r\n'

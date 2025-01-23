@@ -1,11 +1,10 @@
 id: printer
 info:
-  name: Kyocera Mita KM-1530 lpd
+  name: ActiveFax lpd
   author: nmap,cn-kali-team
   tags: detect,tech,printer,service
   severity: info
   metadata:
-    device_type: printer
     rarity: 6
 tcp:
 - name: terminal-server
@@ -18,4 +17,4 @@ tcp:
   - name: printer
     type: regex
     regex:
-    - '^SB06D2F0: \xe5\x9f\xf0\x18\xe5\x9f\xf0\x18\xe5\x9f\xf0\x18\xe5\x9f\xf0\x18\xe5\x9f\xf0\x18\xe1\xa0 no entries\n$'
+    - '^ActiveFax Server: There are \d+ entries in the Faxlist\r\n'

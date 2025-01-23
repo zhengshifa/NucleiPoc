@@ -1,13 +1,15 @@
 id: smtp
 info:
-  name: hMailServer smtpd
+  name: Lotus Notes SMTP
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
-    operating_system: Windows
+    hostname: $1
+    product: lotus_domino
     rarity: 0
-    version: $1
+    vendor: ibm
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +20,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^220 \(SMTP\) hMailServer ([\d.]+) - Up since .*\r\n
+    - ^220 ([-.\w]+) Lotus SMTP MTA Service Ready\r\n$

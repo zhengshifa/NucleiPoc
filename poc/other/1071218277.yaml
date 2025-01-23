@@ -1,12 +1,11 @@
 id: backdoor
 info:
-  name: Windows trojan
+  name: Deep Throat keylogger
   author: nmap,cn-kali-team
   tags: detect,tech,backdoor,service
   severity: info
   metadata:
-    info: '**BACKDOOR**'
-    operating_system: Windows
+    info: '**MALWARE**'
     rarity: 0
 tcp:
 - name: 'null'
@@ -18,4 +17,4 @@ tcp:
   - name: backdoor
     type: regex
     regex:
-    - '220-Welcome!\r\n220-\x1b\[30m/\x1b\[31m#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#\xa4#                                                         \r\n220-\x1b\[30m\|          Current Time:  \x1b\[35m[^\r\n]*\r\n220-\x1b\[30m\|          Current Date:  \x1b\[35m[^\r\n]*\r\n220-\x1b\[30m\\\r\n'
+    - ^DT Key Logger -- Logging System Wide Key Presses\r\n

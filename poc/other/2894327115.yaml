@@ -1,11 +1,14 @@
 id: irc
 info:
-  name: iacd ircd
+  name: ircu Undernet IRCd
   author: nmap,cn-kali-team
   tags: detect,tech,irc,service
   severity: info
   metadata:
+    product: ircu
     rarity: 0
+    vendor: undernet
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -16,4 +19,4 @@ tcp:
   - name: irc
     type: regex
     regex:
-    - ^PING :42\r\n$
+    - ^NOTICE AUTH :\*\*\* Checking Ident\r\nNOTICE AUTH :\*\*\* Got ident response\r\n
