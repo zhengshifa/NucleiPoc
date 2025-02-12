@@ -1,11 +1,16 @@
 id: pop3
 info:
-  name: InterMail pop3d
+  name: Microsoft Exchange pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
+    info: Dutch
+    product: exchange_server
     rarity: 0
+    vendor: microsoft
+    verified: true
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -16,4 +21,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK InterMail POP3 server ready\.\r\n
+    - ^\+OK Microsoft Exchange POP3-server versie ([\d.]+) is gereed\.\r\n

@@ -1,11 +1,11 @@
 id: telnet
 info:
-  name: Aaxeon DevoLinx Ethernet-Serial bridge telnetd
+  name: Nut/OS Demo telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    device_type: bridge
+    operating_system: Nut/OS
     rarity: 0
 tcp:
 - name: 'null'
@@ -17,4 +17,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - '^\xff\xfe\x01Ethernet-Serial Server\r\nUser name:admin\r\nPassword:'
+    - ^Welcome to NutOS Telnet\.\r\n----------------------------\r\n

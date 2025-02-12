@@ -1,14 +1,12 @@
 id: smtp
 info:
-  name: WorkgroupMail smtpd
+  name: Cisco PIX sanitized smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
-    hostname: $1
-    operating_system: Windows
+    device_type: firewall
     rarity: 0
-    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +17,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^220 ([-\w_.]+) ESMTP WorkgroupMail ([\d.]+) .*\r\n
+    - ^220 [\*\d\ ]{2,300}\r\n

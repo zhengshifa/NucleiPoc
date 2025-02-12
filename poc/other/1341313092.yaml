@@ -1,11 +1,10 @@
 id: irc
 info:
-  name: IRCnet ircd
+  name: iacd ircd
   author: nmap,cn-kali-team
   tags: detect,tech,irc,service
   severity: info
   metadata:
-    hostname: $1
     rarity: 0
 tcp:
 - name: 'null'
@@ -17,4 +16,4 @@ tcp:
   - name: irc
     type: regex
     regex:
-    - ^:([\w._-]+) 020 \* :Please wait while we process your connection\.\r\n
+    - ^PING :42\r\n$

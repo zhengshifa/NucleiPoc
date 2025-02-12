@@ -1,13 +1,14 @@
 id: ftp
 info:
-  name: AXIS $1 print server ftpd
+  name: IBM Infoprint $2 ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    device_type: print server
+    device_type: printer
+    hostname: $1
     rarity: 0
-    version: $2
+    version: $3
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +19,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - '^220 AXIS ([\d/+]+) FTP Print Server V([-\w_.]+) '
+    - ^220 ([\w._-]+) IBM Infoprint (\w+) FTP Server ([\w.]+) ready\.\r\n

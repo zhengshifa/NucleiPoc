@@ -1,14 +1,15 @@
 id: pop3
 info:
-  name: DynFX pop3d
+  name: CommuniGate Pro
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
-    hostname: $1
-    operating_system: Windows
+    product: communigate_pro
     rarity: 0
-    version: $2
+    vendor: stalker
+    verified: true
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +20,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK ([-\w_.]+) DynFX POP3 Server ([-\w_.]+) <
+    - ^\+OK CommuniGate Pro POP3 Server ([-.\w]+) ready

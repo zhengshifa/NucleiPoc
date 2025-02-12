@@ -1,15 +1,13 @@
 id: telnet
 info:
-  name: VLC media player telnetd
+  name: Allied Data CopperJet $1 telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    product: vlc_media_player
+    device_type: broadband router
     rarity: 0
-    vendor: videolan
-    verified: true
-    version: $1 $2
+    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +18,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - '^VLC media player ([\w._-]+) ([^\n]+)\nPassword: \xff\xfb\x01'
+    - '^\xff\xfb\x03\xff\xfb\x01\xff\xfb\x01\xff\xfb\x03\r\nCopperJet ([\w._-]+) RouterPlus .*\r\nFirmware version: ([\w._ -]+)\r\nAllied Data Technologies\r\n\r\nPlease login: '

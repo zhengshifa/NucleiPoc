@@ -1,14 +1,12 @@
 id: telnet
 info:
-  name: Larus 54580 NTP clock telnetd
+  name: Netscreen ScreenOS telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    hostname: $4
-    info: NTP $1; MAC $3
+    device_type: firewall
     rarity: 0
-    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +17,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - '^\xff\xfb\x01\xff\xfb\x03\n\r\0SNTP Version ([\d.]+) Server ([\w._-]+)\n\r\0\r\0\nMAC address (\w+)\n\r\0Software version V[\d.]+ \(\d+\) ([\w._-]+)\r\0\nPassword :'
+    - '^\xff\xfd\x18\xff\xfb\x01(?:\xff\xfe\x01)?(?:\xff.\x03)?[\w ]*Remote Management Console\r\n(?:\r\n)?login: $'

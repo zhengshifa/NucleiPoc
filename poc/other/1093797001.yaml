@@ -1,14 +1,12 @@
 id: ftp
 info:
-  name: AXIS $1 Webcam ftpd
+  name: Netburner embedded device ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    device_type: webcam
-    info: $3
+    device_type: specialized
     rarity: 0
-    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +17,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^220 AXIS ([\d\w]+)V(\d\S+) (.*?) ready\.\n
+    - ^220 Welcome to the Netburner FTP server\.\r\n

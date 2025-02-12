@@ -1,12 +1,13 @@
 id: telnet
 info:
-  name: APC network management card telnetd
+  name: Minolta PagePro 20 printer telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    device_type: power-device
+    device_type: printer
     rarity: 0
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +18,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - '^\xff\xfb\x01\n\rUser Name : $'
+    - ^\xff\xfb\x01\xff\xfb\x03\r\n\r\n\r\n\r\n\*{76}\r\n\r\n +Minolta Network Configuration Utility\r\n +Minolta\r\n +Version ([\w.]+)\r\n

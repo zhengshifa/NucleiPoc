@@ -1,13 +1,17 @@
 id: nntp
 info:
-  name: Microsoft NNTP Service
+  name: Microsoft Exchange Internet News Service
   author: nmap,cn-kali-team
   tags: detect,tech,nntp,service
   severity: info
   metadata:
-    info: refused
+    info: $2
     operating_system: Windows
+    product: exchange_server
     rarity: 0
+    vendor: microsoft
+    verified: true
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +22,4 @@ tcp:
   - name: nntp
     type: regex
     regex:
-    - ^502 Connection refused\r\n
+    - ^20[01] Microsoft Exchange Internet News Service Version (\d\.\d\.[\d.]+) \((.*)\)\r\n

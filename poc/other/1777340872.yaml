@@ -1,12 +1,15 @@
 id: smtp
 info:
-  name: Mercury smtpd
+  name: Exim smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
-    info: Connection not authorised
+    info: Serviced refused (IP block)
+    product: exim
     rarity: 0
+    vendor: exim
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +20,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^520 Connection not authorised from this address\.\r\n
+    - ^554 SMTP service not available\r\n$

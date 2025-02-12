@@ -1,13 +1,14 @@
 id: smtp
 info:
-  name: IronPort mail appliance smtpd
+  name: Postfix smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
-    hostname: $1
-    info: access denied
+    product: postfix
     rarity: 0
+    vendor: postfix
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +19,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^554-([\w._-]+)\r\n554 Your access to this mail system has been rejected due to the sending MTA's poor reputation\. If you believe that this failure is in error, please contact the intended recipient via alternate means\.\r\n
+    - ^421 Unexpected log failure, please try later\r\n

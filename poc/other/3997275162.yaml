@@ -1,16 +1,13 @@
 id: ssh
 info:
-  name: SilverSHielD sshd
+  name: ZTE router/switch sshd
   author: nmap,cn-kali-team
   tags: detect,tech,ssh,service
   severity: info
   metadata:
     info: protocol $1
-    operating_system: Windows
-    product: silvershield
     rarity: 0
-    vendor: extenua
-    verified: true
+    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +18,4 @@ tcp:
   - name: ssh
     type: regex
     regex:
-    - ^SSH-([\d.]+)-SilverSHielD\r\n
+    - ^SSH-([\d.]+)-ZTE_SSH\.([\d.]+)\n

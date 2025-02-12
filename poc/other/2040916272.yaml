@@ -1,13 +1,14 @@
 id: http
 info:
-  name: Cisco ODN set-top box httpd
+  name: udpxy UDP-to-HTTP multicast traffic relay
   author: nmap,cn-kali-team
   tags: detect,tech,http,service
   severity: info
   metadata:
-    device_type: media device
-    info: 'MAC: $2; time zone: $1; interface forbidden'
+    product: udpxy
     rarity: 0
+    vendor: pavel_cherenkov
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +19,4 @@ tcp:
   - name: http
     type: regex
     regex:
-    - '^HTTP/1\.1 403 OK\r\nDate: [^\r\n]+ ([A-Z]+) \d\d\d\d\r\nServer: ODN Webserver\[([\dA-F:]{17})\]\r\n'
+    - ^HTTP/1\.1 200 OK[ .]\nContent-Type:application/octet-stream\.?\n\n

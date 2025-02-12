@@ -1,14 +1,12 @@
 id: telnet
 info:
-  name: Symantec Raptor firewall secure gateway telnetd
+  name: 3Com OfficeConnect LAN modem telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    product: raptor_firewall
+    device_type: router
     rarity: 0
-    vendor: symantec
-    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +17,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - ^\r\nRaptor Firewall Secure Gateway\.\r\n
+    - '^Welcome to the OfficeConnect\(TM\) LAN modem Telnet Server\n\rConnected From IpAddr/Port# \w+/\d+ To Port# \d+\n\r\nLANmodem> Password: '

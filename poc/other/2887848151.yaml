@@ -1,13 +1,12 @@
 id: ssh
 info:
-  name: SCS sshd
+  name: Mocana embedded SSH
   author: nmap,cn-kali-team
   tags: detect,tech,ssh,service
   severity: info
   metadata:
-    info: $2; on $3; protocol $4
+    info: protocol 2.0
     rarity: 0
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +17,4 @@ tcp:
   - name: ssh
     type: regex
     regex:
-    - '^sshd: SSH Secure Shell (\d[-.\w]+) \(([^\r\n\)]+)\) on ([-.\w]+)\nSSH-(\d[\d.]+)-'
+    - ^SSH-2\.0-Mocana SSH\r\n

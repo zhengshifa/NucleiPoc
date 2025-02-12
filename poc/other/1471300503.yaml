@@ -1,13 +1,14 @@
 id: irc
 info:
-  name: ircu ircd
+  name: UnrealIRCd
   author: nmap,cn-kali-team
   tags: detect,tech,irc,service
   severity: info
   metadata:
-    product: ircu
+    info: Admin email $1
+    product: unrealircd
     rarity: 0
-    vendor: undernet
+    vendor: unrealircd
     verified: true
 tcp:
 - name: 'null'
@@ -19,4 +20,4 @@ tcp:
   - name: irc
     type: regex
     regex:
-    - ^ERROR..Your host is trying to \(re\)connect too fast -- throttled\r\n
+    - '^ERROR :Closing Link: \[[\d.]+\] \(Throttled: Reconnecting too fast\) -Email ([-\w_.]+@[-\w_.]+) for more information\.'

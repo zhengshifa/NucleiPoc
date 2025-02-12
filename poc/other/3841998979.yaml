@@ -1,14 +1,12 @@
 id: nntp
 info:
-  name: Colobus nntpd
+  name: nntp//rss nntpd
   author: nmap,cn-kali-team
   tags: detect,tech,nntp,service
   severity: info
   metadata:
-    hostname: $1
-    info: posting ok
     rarity: 0
-    version: $2
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +17,4 @@ tcp:
   - name: nntp
     type: regex
     regex:
-    - ^200 ([-\w_.]+) - colobus ([\d.]+) ready - \(posting ok\)\.\r\n
+    - ^200 nntp//rss v([\d.]+) news server ready\r\n

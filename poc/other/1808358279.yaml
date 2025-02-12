@@ -1,12 +1,12 @@
 id: telnet
 info:
-  name: GeeXboX uShare telnetd
+  name: Nomadix AG $1 telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
+    device_type: WAP
     rarity: 0
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +17,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - '^uShare \(([\w._-]+)\) \(Built .*\)\nFor a list of registered commands type \"help\"\n\n> '
+    - '^\xff\xfb\x03\xff\xfb\x01\r\n\r\n\r\nAG (\d+)\r\n\r\n\r\nLogin: '

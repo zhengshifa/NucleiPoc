@@ -1,15 +1,14 @@
 id: ssh
 info:
-  name: Cisco SSH
+  name: OpenSSH
   author: nmap,cn-kali-team
   tags: detect,tech,ssh,service
   severity: info
   metadata:
-    info: protocol $1; IOS XA
-    operating_system: IOS
-    product: ssh
+    info: protocol $1
+    product: openssh
     rarity: 0
-    vendor: cisco
+    vendor: openbsd
     verified: true
     version: $2
 tcp:
@@ -22,4 +21,4 @@ tcp:
   - name: ssh
     type: regex
     regex:
-    - ^SSH-(\d[\d.]+)-CiscoIOS_([\d.]+)XA\r?\n
+    - ^SSH-([\d.]+)-OpenSSH_([\w._-]+)-chrootssh\n

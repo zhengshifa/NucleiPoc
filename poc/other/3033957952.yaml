@@ -1,13 +1,14 @@
 id: smtp
 info:
-  name: Stalker smtpd
+  name: Microsoft ESMTP
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
-    operating_system: Mac OS
+    hostname: $1
+    operating_system: Windows
     rarity: 0
-    version: $1
+    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +19,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^220-Stalker Internet Mail Server V.([\w.]+) is ready\.\r\n
+    - '^220 \[?([-.+\w]+)\]? Microsoft ESMTP MAIL Service, Version: ([-\w.]+) ready'

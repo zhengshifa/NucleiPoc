@@ -1,15 +1,16 @@
 id: sip
 info:
-  name: $1 SIP
+  name: Kamailio
   author: nmap,cn-kali-team
   tags: detect,tech,sip,service
   severity: info
   metadata:
-    device_type: WAP
     fallback:
     - get-request
+    info: x86_64
+    operating_system: Linux
     rarity: 5
-    version: $2
+    version: $1
 tcp:
 - name: sipoptions
   inputs:
@@ -21,4 +22,4 @@ tcp:
   - name: sip
     type: regex
     regex:
-    - '(?i)^SIP/2\.0 404 Not Found\r\n(?:[^\r\n]+\r\n)*?User-Agent: (AVM FRITZ!Box Fon WLAN [\w._-]+(?: v\d)?) ([\w._-]+ \(\w+ +\d+ \d+\))'
+    - '(?i)^SIP/2\.0 478 Unresolvable destination \(478/SL\)\r\n(?:[^\r\n]+\r\n)*?Server: kamailio \(([\w._-]+) \(x86_64/linux\)\)\r\n'

@@ -1,11 +1,10 @@
 id: imap
 info:
-  name: Scalix imapd
+  name: DeskNow imapd
   author: nmap,cn-kali-team
   tags: detect,tech,imap,service
   severity: info
   metadata:
-    hostname: $2
     rarity: 0
     version: $1
 tcp:
@@ -18,4 +17,4 @@ tcp:
   - name: imap
     type: regex
     regex:
-    - ^\* OK Scalix IMAP server ([\d.]+) on ([-\w_.]+)\r\n
+    - ^\* OK IMAP4rev1 Server DeskNow \(DeskNow ([\w._-]+)\) ready\r\n

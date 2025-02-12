@@ -1,13 +1,15 @@
 id: pop3
 info:
-  name: IdeaPop3Server pop3d
+  name: CommuniGate Pro pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
     hostname: $1
+    product: communigate_pro
     rarity: 0
-    version: $2
+    vendor: stalker
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +20,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK ([-\w_.]+)\s+IdeaPop3Server ([^\s]+) ready\.\r\n
+    - ^\+OK POP3 Server OK <[\d.]+@([-\w_.]+)>\r\n

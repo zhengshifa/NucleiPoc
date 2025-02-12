@@ -1,11 +1,11 @@
 id: pop3
 info:
-  name: SeattleLab SLMail pop3d
+  name: Cisco VPN 3000 Concentrator pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
-    operating_system: Windows
+    device_type: security-misc
     rarity: 0
 tcp:
 - name: 'null'
@@ -17,4 +17,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK Welcome to the SLnet POP3 Service\r\n
+    - ^\+OK Server Ready\r\n

@@ -1,13 +1,14 @@
 id: pop3
 info:
-  name: DEC OpenVMS MultiNet pop3d
+  name: Cyrus pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
-    hostname: $1
+    product: cyrus_imap_server
     rarity: 0
-    version: $2
+    vendor: cmu
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +19,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK ([-.\w]+) MultiNet POP3 Server Process V(\S+) at
+    - '^-ERR \[SYS/PERM\] Fatal error: tls_init\(\) failed\r\n'

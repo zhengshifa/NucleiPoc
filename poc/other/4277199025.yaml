@@ -1,13 +1,15 @@
 id: smtp
 info:
-  name: AppleMailServer
+  name: Exim smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
     hostname: $1
+    product: exim
     rarity: 0
-    version: $2
+    vendor: exim
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +20,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^220 ([-.\w]+) AppleMailServer (\d[-.\w]+) SMTP Server Ready\r\n
+    - '(?i)^220[- ].*\r\n220[- ]([^\r\n]+) ESMTP Exim '

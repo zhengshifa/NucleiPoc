@@ -1,14 +1,14 @@
 id: imap
 info:
-  name: Microsoft Exchange 2000 imapd
+  name: FirstClass imapd
   author: nmap,cn-kali-team
   tags: detect,tech,imap,service
   severity: info
   metadata:
-    operating_system: Windows
-    product: exchange_server
+    hostname: $2
+    product: firstclass
     rarity: 0
-    vendor: microsoft
+    vendor: opentext
     verified: true
     version: $1
 tcp:
@@ -21,4 +21,4 @@ tcp:
   - name: imap
     type: regex
     regex:
-    - ^\* OK Microsoft Exchange 2000 IMAP4rev1 server version (\d[-.\w]+) \([-.\w]+\) ready\.\r\n
+    - ^\* OK FirstClass IMAP4rev1 server v([\d.]+) at ([-\w_.]+) ready\r\n

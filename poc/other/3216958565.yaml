@@ -1,12 +1,11 @@
 id: backdoor
 info:
-  name: Czech "zadej heslo" backdoor
+  name: Subseven backdoor
   author: nmap,cn-kali-team
   tags: detect,tech,backdoor,service
   severity: info
   metadata:
     info: '**BACKDOOR**'
-    operating_system: Windows
     rarity: 0
 tcp:
 - name: 'null'
@@ -18,4 +17,4 @@ tcp:
   - name: backdoor
     type: regex
     regex:
-    - ^Zadej heslo:$
+    - ^\r\n\[RPL\]002\r\n$

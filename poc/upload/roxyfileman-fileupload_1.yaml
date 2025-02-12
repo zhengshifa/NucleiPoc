@@ -13,11 +13,12 @@ info:
     cvss-score: 8.8
     cwe-id: CWE-434
   metadata:
-    verified: "true"
+    max-request: 4
+    verified: true
     google-query: intitle:"Roxy file manager"
   tags: intrusive,misconfig,edb,roxy,fileman,rce,fileupload
 
-requests:
+http:
   - raw:
       - |
         POST /php/upload.php HTTP/1.1

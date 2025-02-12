@@ -1,12 +1,12 @@
 id: http
 info:
-  name: Trend Micro OfficeScan Antivirus http config
+  name: svea_httpd
   author: nmap,cn-kali-team
   tags: detect,tech,http,service
   severity: info
   metadata:
-    operating_system: Windows
     rarity: 0
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +17,4 @@ tcp:
   - name: http
     type: regex
     regex:
-    - '^HTTP/1\.0 400 Bad Request\r\nServer: OfficeScan Client\r\nContent-Type: text/plain\r\nAccept-Ranges: bytes\r\nContent-Length: 4\r\n\r\nFail'
+    - '^\(null\) 400 Bad Request\r\nServer: svea_httpd/([\w._-]+)\r\n'

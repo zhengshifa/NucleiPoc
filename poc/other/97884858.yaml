@@ -1,14 +1,12 @@
 id: telnet
 info:
-  name: Schneider Automation $1 Modbus-to-Ethernet bridge telnetd
+  name: Allied Telesyn switch telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    device_type: bridge
-    info: 'serial number: $2'
+    device_type: switch
     rarity: 0
-    version: $3
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +17,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - ^\xff\xfb\x01\xff\xfb\x03Schneider Automation, Inc\. - Modbus Bridge \((\w+ CEV \w+ \w+)\)\r\n\r\0\r\n\r\0Serial Number ([\w._-]+)  Software Version V([\w._-]+ \(\d+\))\r\0\r\n\r\0\r\nPress Enter to go into Setup Mode, wait to close\r\n\r\0
+    - '^\xff\xfe\0\xff\xfc\0\xff\xfe\x01\xff\xfb\x01\xff\xfd\x03\xff\xfb\x03\xff\xfd\x18\xff\xfd\x1f\n\n\rLocal User Access Verification: \n\n\rLogin: '

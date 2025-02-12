@@ -1,14 +1,13 @@
 id: ftp
 info:
-  name: Dreambox ftpd
+  name: Cisco IronPort mail appliance ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    device_type: media device
-    info: German
-    operating_system: Linux
+    hostname: $1
     rarity: 0
+    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +18,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^220 Willkomen auf Ihrer Dreambox\.\r\n
+    - ^220 ([-.+\w]+) Cisco IronPort FTP server \(V([-.\w]+)\) ready\r\n

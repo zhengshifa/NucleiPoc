@@ -1,13 +1,12 @@
 id: telnet
 info:
-  name: Efficient Networks 5871 IDSL router telnetd
+  name: Enterasys C2H124-48 switch telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    device_type: broadband router
+    device_type: switch
     rarity: 0
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +17,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - ^\r\nEfficient 5871 IDSL Router \(5871-601 / 5871-001 HW\) v([-\d.]+) Ready\r\n
+    - '^\xff\xfb\x01\xff\xfb\x03\r\nUsername:'

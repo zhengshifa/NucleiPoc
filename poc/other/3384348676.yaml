@@ -1,23 +1,19 @@
 id: smtp
 info:
-  name: SonicWALL Email Security smtpd
+  name: Lyris smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
-    device_type: security-misc
-    hostname: $1
-    rarity: 8
-    version: $2
+    rarity: 0
 tcp:
-- name: hello
+- name: 'null'
   inputs:
-  - data: EHLO\r\n
+  - data: ''
   host:
   - '{{Hostname}}'
-  port: 25,587,3025
   extractors:
   - name: smtp
     type: regex
     regex:
-    - ^220 ([\w_.-]+) ESMTP SonicWALL \(([\d.]+)\)\r\n
+    - ^220  ESMTP Lyris service ready\r\n

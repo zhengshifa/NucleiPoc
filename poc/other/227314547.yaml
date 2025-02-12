@@ -1,15 +1,12 @@
 id: pop3
 info:
-  name: Microsoft Exchange Online pop3d
+  name: GNU POP3 Server
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
-    operating_system: Windows
-    product: exchange_server
     rarity: 0
-    vendor: microsoft
-    verified: true
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +17,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK The Microsoft Exchange POP3 service is ready\. \[\w+=*\]\r\n
+    - ^\+OK POP3 Welcome to GNU POP3 Server Version (\d[-.\w]+) <.*>\r\n

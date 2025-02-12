@@ -1,15 +1,14 @@
 id: imap
 info:
-  name: Perdition imapd
+  name: Mercury/32 imapd
   author: nmap,cn-kali-team
   tags: detect,tech,imap,service
   severity: info
   metadata:
     hostname: $1
-    product: perdition
+    operating_system: Windows
     rarity: 0
-    vendor: horms
-    verified: true
+    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +19,4 @@ tcp:
   - name: imap
     type: regex
     regex:
-    - ^\* OK IMAP4 Ready ([-\w_.]+) \w+\r\n
+    - ^\* OK ([-.+\w]+) IMAP4rev1 Mercury/32 v(\d[-.\w]+) server ready\.\r\n

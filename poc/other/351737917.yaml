@@ -1,13 +1,12 @@
 id: sip
 info:
-  name: SIPfoundry sipXecs PBX
+  name: NetSapiens SiPBX SIP switch
   author: nmap,cn-kali-team
   tags: detect,tech,sip,service
   severity: info
   metadata:
-    operating_system: Linux
+    device_type: switch
     rarity: 5
-    version: $1
 tcp:
 - name: sipoptions
   inputs:
@@ -19,4 +18,4 @@ tcp:
   - name: sip
     type: regex
     regex:
-    - '(?i)^SIP/2\.0 408 Request timeout\r\n(?:[^\r\n]+\r\n)*?Server: sipXecs/([\w._-]+) sipXecs/sipXproxy \(Linux\)\r\n'
+    - '(?i)^SIP/2\.0 200 OK\r\n(?:[^\r\n]+\r\n)*?Server: NetSapiens SiPBx 1-1205c\r\n'

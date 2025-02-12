@@ -1,13 +1,15 @@
 id: ssh
 info:
-  name: Foxit WAC Server sshd
+  name: OpenSSH
   author: nmap,cn-kali-team
   tags: detect,tech,ssh,service
   severity: info
   metadata:
     info: protocol $1
-    operating_system: Windows
+    product: openssh
     rarity: 0
+    vendor: openbsd
+    verified: true
     version: $2
 tcp:
 - name: 'null'
@@ -19,4 +21,4 @@ tcp:
   - name: ssh
     type: regex
     regex:
-    - ^SSH-([\d.]+)-Foxit-WAC-Server-([\d.]+ Build \d+)\n
+    - ^SSH-([\d.]+)-OpenSSH_([\w._-]+-CERN\d+)\r?\n

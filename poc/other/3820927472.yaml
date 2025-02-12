@@ -1,15 +1,15 @@
 id: http
 info:
-  name: Microsoft IIS httpd
+  name: Kolibri httpd
   author: nmap,cn-kali-team
   tags: detect,tech,http,service
   severity: info
   metadata:
-    operating_system: Windows
-    product: internet_information_services
+    product: kolibri
     rarity: 0
-    vendor: microsoft
+    vendor: senkas
     verified: true
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +20,4 @@ tcp:
   - name: http
     type: regex
     regex:
-    - (?i)^HTTP/1\.1 400 Bad Request\r\n(?:[^\r\n]+\r\n)*?\r\n<h1>Bad Request \(Invalid Verb\)</h1>
+    - '^HTTP/1\.1 400 Bad Request\r\nserver: kolibri-([\w._-]+)\r\ncontent-type: text/plain\r\ncontent-length: 11\r\n\r\nBad Request$'

@@ -1,13 +1,12 @@
 id: pop3
 info:
-  name: WebSTAR 4D pop3d
+  name: Solid pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
-    operating_system: Mac OS X
+    hostname: $1
     rarity: 0
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +17,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK 4D Mail ([-\w_.]+) ready <
+    - ^\+OK Solid POP3 server ready <[\d.]+@([\w._-]+)>\r\n

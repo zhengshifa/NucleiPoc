@@ -1,14 +1,12 @@
 id: smtp
 info:
-  name: 4D WebSTAR smtpd
+  name: Zeus SMTPS smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
-    hostname: $1
-    operating_system: Mac OS X
     rarity: 0
-    version: $2
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +17,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^220 ([-\w_.]+) 4D WebSTAR V Mail \(([-\w_.]+)\) Ready for action\r\n
+    - ^220 - zeus SMTPS Sendmail ([-\w_.]+)/[-\w_.]+; .*\n

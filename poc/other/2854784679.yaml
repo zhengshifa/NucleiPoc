@@ -1,13 +1,11 @@
 id: smtp
 info:
-  name: Post.Office
+  name: Dumbster fake smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
-    hostname: $1
     rarity: 0
-    version: $2 release $3
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +16,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - '^220 ([-.\w]+) ESMTP server \([Pp]ost.[Oo]ffice v([-.\w]+) release ([-.\w]+) ID# '
+    - ^220 localhost Dumbster SMTP service ready\r\n
