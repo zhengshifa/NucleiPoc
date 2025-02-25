@@ -1,15 +1,15 @@
-id: wp-abstracts-manuscripts-manager
+id: wp-abstracts-manuscripts-manager-a8bf2eff1caee16366d9cbf75d2fcc22
 
 info:
   name: >
-    WP Abstracts <= 2.6.2 - Cross-Site Request Forgery
+    WP Abstracts <= 2.7.2 - Cross-Site Request Forgery to Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c5b74908-65ed-4b6f-856f-e95cfd64f998?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/79af711e-d044-447e-9802-8be648a3843d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.6.2')
+          - compare_versions(version, '<= 2.7.2')

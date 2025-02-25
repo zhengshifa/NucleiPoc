@@ -1,15 +1,15 @@
-id: infographic-and-list-builder-ilist
+id: infographic-and-list-builder-ilist-7a366a0db0115c6f8544084f103575ea
 
 info:
   name: >
-    AI Infographic Maker <= 4.9.0 - Unauthenticated Arbitrary Shortcode Execution
+    Infographic Maker iList <= 4.7.4 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Title Update
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0aa21fad-4dd0-4ccd-a325-de3532a6ffaf?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4c8f1c29-b99d-4af0-9cc4-5d6179529ab4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.9.0')
+          - compare_versions(version, '<= 4.7.4')

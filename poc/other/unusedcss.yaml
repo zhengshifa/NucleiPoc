@@ -1,15 +1,15 @@
-id: unusedcss
+id: unusedcss-61bcbeb178decd5dc954edeed73a8242
 
 info:
   name: >
-    RapidLoad Power-Up for Autoptimize <= 1.6.35 - Authenticated (Subscriber+) SQL Injection
+    RapidLoad – Optimize Web Vitals Automatically <= 2.4.2 - Missing Authorization to Authenticated (Subscriber+) Plugin Settings Modification and SQL Injection
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eb71befb-8b79-46b0-9d0b-0159542147c1?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2c8ff4ec-9b40-4d59-b3b0-382f91042a4a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.6.35')
+          - compare_versions(version, '<= 2.4.2')

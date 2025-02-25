@@ -1,15 +1,15 @@
-id: rss-feed-widget
+id: rss-feed-widget-80a0a36ea063283e29ed3c5e77408ead
 
 info:
   name: >
-    RSS Feed Widget <= 2.9.7 - Authenticated (Admin+) Stored Cross-Site Scripting
+    RSS Feed Widget <= 2.9.9 - Authenticated (Contributor+) Stored Cross-Site Scripting via rfw-youtube-videos Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c468a56c-4411-49fc-8014-fc9b71a645c3?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b77ea258-dced-4c36-bd0d-8977a347d1c9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.9.7')
+          - compare_versions(version, '<= 2.9.9')

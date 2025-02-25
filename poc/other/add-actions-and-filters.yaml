@@ -1,15 +1,15 @@
-id: add-actions-and-filters
+id: add-actions-and-filters-2062b3d0152716b08dbb9bcc487575a6
 
 info:
   name: >
-    Add Shortcodes Actions And Filters <= 2.10 - Reflected Cross-Site Scripting
+    Add Shortcodes Actions And Filters <= 2.10 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/228de538-90c7-4f7d-a076-dd0a01458e38?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0b7da6f7-d486-44e5-9eeb-21feb119a48b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/add-actions-and-filters/"
     google-query: inurl:"/wp-content/plugins/add-actions-and-filters/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,add-actions-and-filters,medium
+  tags: cve,wordpress,wp-plugin,add-actions-and-filters,low
 
 http:
   - method: GET

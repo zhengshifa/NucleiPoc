@@ -1,15 +1,15 @@
-id: classified-listing
+id: classified-listing-4f13524aa9e30ac6373e0dbd9053098b
 
 info:
   name: >
-    Classified Listing <= 2.4.5 - Cross-Site Request Forgery via rtcl_ajax_thumbnail_delete
+    Classified Listing – Classified ads & Business Directory Plugin <= 3.0.10.3 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Attachment Deletion
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2352dce7-5302-4892-9ae2-bf814f029af4?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e7113b1c-78dc-4648-b14a-52ff6668fd1d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/classified-listing/"
     google-query: inurl:"/wp-content/plugins/classified-listing/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,classified-listing,medium
+  tags: cve,wordpress,wp-plugin,classified-listing,low
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.4.5')
+          - compare_versions(version, '<= 3.0.10.3')

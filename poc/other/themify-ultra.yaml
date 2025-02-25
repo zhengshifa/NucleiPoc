@@ -1,15 +1,15 @@
-id: themify-ultra
+id: themify-ultra-6d868ce9e4343351f6736fb0d4d6c2db
 
 info:
   name: >
-    Themify Ultra <= 7.3.5 - Authenticated (Subscriber+) PHP Object Injection
+    Themify Ultra <= 7.3.5 - Authenticated (Subscriber+) Arbitrary File Upload
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/17c6a91c-e2a6-4f17-b145-145e9e7a0079?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ed5251e7-64d2-4210-9864-144952a49327?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

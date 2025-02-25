@@ -1,15 +1,15 @@
-id: the-moneytizer
+id: the-moneytizer-62aeb68c8206c3c1db67ef6ca58b9e51
 
 info:
   name: >
-    The Moneytizer <= 9.5.20 - Missing Authorization via multiple AJAX actions
+    The Moneytizer <= 9.5.20 - Cross-Site Request Forgery via multiple AJAX actions
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/71823e36-3899-4253-a1d2-c6f8921d18dc?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/14351561-bd31-4aaa-931a-e72917458013?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/the-moneytizer/"
     google-query: inurl:"/wp-content/plugins/the-moneytizer/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,the-moneytizer,high
+  tags: cve,wordpress,wp-plugin,the-moneytizer,medium
 
 http:
   - method: GET

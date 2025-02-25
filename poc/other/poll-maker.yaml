@@ -1,15 +1,15 @@
-id: poll-maker
+id: poll-maker-0c220894cb4ac2a3712e9baed9eed04c
 
 info:
   name: >
-    Poll Maker <= 5.5.6 - Missing Authorization
+    Poll Maker – Versus Polls, Anonymous Polls, Image Polls <= 5.4.6 - Authenticated (Administrator+) Stored Cross-Site Scripting via Poll Settings
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/326c16af-a2d3-431b-9735-a5dbd9a68ae0?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9e6434fb-390d-439d-bf3e-9afe8644fd58?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/poll-maker/"
     google-query: inurl:"/wp-content/plugins/poll-maker/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,poll-maker,high
+  tags: cve,wordpress,wp-plugin,poll-maker,low
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.5.6')
+          - compare_versions(version, '<= 5.4.6')

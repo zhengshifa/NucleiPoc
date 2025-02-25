@@ -1,15 +1,15 @@
-id: wp-simple-booking-calendar
+id: wp-simple-booking-calendar-34f4a1a718c60d12e4d96b373b4a77ce
 
 info:
   name: >
-    WP Simple Booking Calendar <= 2.0.6 - Authenticated SQL Injection
+    WP Simple Booking Calendar <= 2.0.10 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/93164941-effe-4363-811e-3161cff10c88?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cad4300f-02f9-4c9f-9bb3-1c9da8b78ac9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wp-simple-booking-calendar/"
     google-query: inurl:"/wp-content/plugins/wp-simple-booking-calendar/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-simple-booking-calendar,low
+  tags: cve,wordpress,wp-plugin,wp-simple-booking-calendar,medium
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.6')
+          - compare_versions(version, '<= 2.0.10')

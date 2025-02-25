@@ -1,15 +1,15 @@
-id: random-banner
+id: random-banner-0b21c7eea2233a52fab8c4a62c453192
 
 info:
   name: >
-    Random Banner <= 4.2.8 - Authenticated (Admin+) Stored Cross-Site Scripting
+    Random Banner <= 4.2.9 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6435fc6b-a5dc-4de3-9c53-5d1bfe8cfd88?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/32369351-ddae-452f-b286-6478deab5a97?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.2.8')
+          - compare_versions(version, '<= 4.2.9')

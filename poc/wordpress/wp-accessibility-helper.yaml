@@ -1,15 +1,15 @@
-id: wp-accessibility-helper
+id: wp-accessibility-helper-2ebee88d3cc127551f1f7c34b744653e
 
 info:
   name: >
-    WP Accessibility Helper (WAH) <= 0.6.2.9 - Missing Authorization
+    WP Accessibility Helper <= 0.6.2.8 - Missing Authorization to Authenticated (Subscriber+) Limited Settings Update
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/81850474-5e85-4c4b-95ca-80092b05c6ff?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d3beee75-0480-4504-a177-45f8cd32cf36?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wp-accessibility-helper/"
     google-query: inurl:"/wp-content/plugins/wp-accessibility-helper/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-accessibility-helper,high
+  tags: cve,wordpress,wp-plugin,wp-accessibility-helper,low
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 0.6.2.9')
+          - compare_versions(version, '<= 0.6.2.8')

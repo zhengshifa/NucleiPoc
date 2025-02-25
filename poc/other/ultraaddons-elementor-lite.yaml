@@ -1,15 +1,15 @@
-id: ultraaddons-elementor-lite
+id: ultraaddons-elementor-lite-0dccfb20a38ced28b90ef72a03048aa1
 
 info:
   name: >
-    UltraAddons Elementor Lite <= 1.1.8 - Authenticated (Author+) Stored Cross-Site Scripting
+    UltraAddons – Elementor Addons (Header Footer Builder, Custom Font, Custom CSS,Woo Widget, Menu Builder, Anywhere Elementor Shortcode) <= 1.1.8 - Insecure Direct Object Reference to Sensitive Information Exposure via UA_Template Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b847f463-2837-4f91-bae6-a8058f36a7db?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/719de6e5-29c5-4303-981d-81840939a0b1?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

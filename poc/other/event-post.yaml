@@ -1,15 +1,15 @@
-id: event-post
+id: event-post-12a19d0523d91d302e58f735caa56444
 
 info:
   name: >
-    Event post <= 5.9.5 - Unauthenticated Local File Inclusion
+    Event Post <= 5.9.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via events_cal Shortcode
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/178911d9-0552-4f44-aae5-06fc9734cfac?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f3ae1c32-18a7-4109-a7ea-dfd18fa3a8e2?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/event-post/"
     google-query: inurl:"/wp-content/plugins/event-post/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,event-post,critical
+  tags: cve,wordpress,wp-plugin,event-post,low
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.9.5')
+          - compare_versions(version, '<= 5.9.6')

@@ -1,15 +1,15 @@
-id: zynith-seo
+id: zynith-seo-15c840deced407ba53e3cbbb241ee24f
 
 info:
   name: >
-    Zynith SEO <= 7.4.9 - Missing Authorization to Unauthenticated Settings Update
+    Zynith SEO <= 7.4.9 - Missing Authorization to Unauthenticated Arbitrary Option Deletion
   author: topscoder
   severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9a4a2b01-450d-46fb-9de5-0de40b590201?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/813532fd-0613-47df-a4d0-54d6b33f37b3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

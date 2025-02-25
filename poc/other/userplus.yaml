@@ -1,15 +1,15 @@
-id: userplus
+id: userplus-e58d515b8fd973ea70d83dd2fb820755
 
 info:
   name: >
-    UserPlus <= 2.0 - Privilege Escalation
+    UserPlus <= 2.0 - Authenticated (Editor+) Registration Form Update to Privilege Escalation
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6b26f41e-fab8-4fe4-b5ab-4c238a433eab?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1148b18d-7af1-41c6-bd7f-1b2d53cb44e6?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

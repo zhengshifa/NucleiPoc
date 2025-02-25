@@ -1,15 +1,15 @@
-id: s2member
+id: s2member-b9c201edb420e710b181dd4e414583da
 
 info:
   name: >
-    s2Member – Excellent for All Kinds of Memberships, Content Restriction Paywalls & Member Access Subscriptions <= 241216 - Reflected Cross-Site Scripting
+    s2Member – Excellent for All Kinds of Memberships, Content Restriction Paywalls & Member Access Subscriptions <= 241114 - Authenticated (Contributor+) Sensitive Information Exposure
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0a5c8f46-a686-4b77-8a22-8dec92a96350?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/410d4ab0-22dd-4993-afbf-ae6193b70977?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/s2member/"
     google-query: inurl:"/wp-content/plugins/s2member/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,s2member,medium
+  tags: cve,wordpress,wp-plugin,s2member,low
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 241216')
+          - compare_versions(version, '<= 241114')

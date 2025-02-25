@@ -1,15 +1,15 @@
-id: realty-workstation
+id: realty-workstation-27a23d5e9a66c80716f7f53c1fd83306
 
 info:
   name: >
-    Realty Workstation <= 1.0.45 - Missing Authorization
+    Realty Workstation <= 1.0.45 - Authentication Bypass to Account Takeover
   author: topscoder
-  severity: high
+  severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/14dcc17f-8252-44d0-ba31-f12f7f53593a?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5c9320f9-2e1a-4d76-850b-fa6fb68cd09f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/realty-workstation/"
     google-query: inurl:"/wp-content/plugins/realty-workstation/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,realty-workstation,high
+  tags: cve,wordpress,wp-plugin,realty-workstation,critical
 
 http:
   - method: GET
