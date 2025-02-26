@@ -8,4 +8,4 @@ info:
 workflows:
   - template: technologies/aem-detection.yaml
     subtemplates:
-      - tags: aem
+      -

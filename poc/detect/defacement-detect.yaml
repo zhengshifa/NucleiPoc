@@ -16,7 +16,7 @@ info:
   metadata:
     verified: true
     max-request: 85
-  tags: misc,defacement,spam,hacktivism,fuzz,miscellaneous
+  tags: misc,defacement,spam,hacktivism,brute-force
 
 http:
   - method: GET
@@ -413,4 +413,4 @@ http:
         - /frost.txt
         - /-.txt
         - /!.txt
-# digest: 490a004630440220586e07de56dbacaaa583aa96e26a88b7abf5fdbfd41bf1fbee9af6686ade9f6402205874fda55b54a7094ac1ff1043e62e44d478e1590987f6b0d47bd136066ded72:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100b1104c5946740b6c89dd94c50cdf42924114a792f6b8758e93b744917964bc24022100b41380314731a08a4617cb7517e4030c1596985a0a869dfdb9e4b9b6227e91a8:922c64590222798bb761d5b6d8e72950
