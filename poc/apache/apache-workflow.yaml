@@ -8,4 +8,4 @@ info:
 workflows:
   - template: technologies/apache/apache-detect.yaml
     subtemplates:
-      -
+      - tags: apache
