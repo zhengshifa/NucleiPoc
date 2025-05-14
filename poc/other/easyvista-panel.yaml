@@ -9,8 +9,8 @@ info:
   reference:
     - https://www.easyvista.com/
   metadata:
-    verified: true
     max-request: 1
+    verified: true
     shodan-query: http.title:"Easyvista"
   tags: panel,easyvista,login,detect
 
@@ -33,4 +33,4 @@ http:
         regex:
           - '(?i)package:\s+"([a-z0-9._-]+)"'
           - '(?i)version&nbsp;:&nbsp;([a-z0-9._-]+)'
-# digest: 490a004630440220467cf29a24cdb359e3d6ca6ca2f51463fcd251d43ab7d40438836a0b6b8bc7880220633e2244e6b2d0c5a506ce1a3a6cc63fa7b33e597fd2be353d3b92ddbd8ea4d4:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502202e940a0d921638b03da755b8b6961674e2218da0b375b10c31c34de9181b8c7f022100fb7c93a0c82f313e5ace2cca365dc8d7b6c769efd178287dfd89795b47505360:922c64590222798bb761d5b6d8e72950
