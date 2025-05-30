@@ -4,11 +4,14 @@ info:
   name: IPStack API Test
   author: zzeitlin
   severity: info
-  reference: https://ipstack.com/documentation
+  reference:
+    - https://ipstack.com/documentation
   tags: token-spray,ipstack
+  metadata:
+    max-request: 1
 
 self-contained: true
-requests:
+http:
   - method: GET
     path:
       - "https://api.ipstack.com/8.8.8.8?access_key={{token}}"

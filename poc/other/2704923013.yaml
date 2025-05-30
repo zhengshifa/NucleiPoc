@@ -1,15 +1,14 @@
 id: smtp
 info:
-  name: MailEnable smptd
+  name: CommuniGate Pro SMTP
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
     hostname: $1
-    operating_system: Windows
-    product: mailenable
+    product: communigate_pro
     rarity: 0
-    vendor: mailenable
+    vendor: stalker
     verified: true
     version: $2
 tcp:
@@ -22,4 +21,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - '^220 ([-.+\w]+) ESMTP Mail Enable SMTP Service, Version: (\d[\w.]+)-- ready at'
+    - ^220 ([-.\w]+) ESMTP CommuniGate Pro (\d[-.\w]+)\r\n

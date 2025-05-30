@@ -1,5 +1,4 @@
 id: CNVD-2019-01348
-
 info:
   name: Xiuno BBS CNVD-2019-01348
   author: princechaddha
@@ -12,20 +11,17 @@ info:
     cvss-metrics: CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
     cvss-score: 6.5
     cwe-id: CWE-276
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/install/"
     headers:
       Accept-Encoding: deflate
-
     matchers-condition: and
     matchers:
       - type: status
         status:
           - 200
-
       - type: word
         part: body
         words:

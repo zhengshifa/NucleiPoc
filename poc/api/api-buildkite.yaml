@@ -3,12 +3,15 @@ id: api-buildkite
 info:
   name: Buildkite API Test
   author: zzeitlin
-  reference: https://buildkite.com/docs/apis/rest-api/user
   severity: info
+  reference:
+    - https://buildkite.com/docs/apis/rest-api/user
   tags: token-spray,buildkite
+  metadata:
+    max-request: 1
 
 self-contained: true
-requests:
+http:
   - method: GET
     path:
       - "https://api.buildkite.com/v2/user"

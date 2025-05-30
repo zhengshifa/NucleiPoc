@@ -4,11 +4,14 @@ info:
   name: PostMark API Test
   author: zzeitlin
   severity: info
-  reference: https://postmarkapp.com/developer/api/overview
+  reference:
+    - https://postmarkapp.com/developer/api/overview
   tags: token-spray,postmark
+  metadata:
+    max-request: 1
 
 self-contained: true
-requests:
+http:
   - method: GET
     path:
       - "https://api.postmarkapp.com/server"
