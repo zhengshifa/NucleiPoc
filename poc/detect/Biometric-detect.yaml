@@ -1,14 +1,10 @@
 id: biometric-detect
 
 info:
-  name: Biometric or Fingerprint Usage Detection
-  author: YoruYagami
+  name: Biometric or Fingerprint detect
+  author: gaurang
   severity: info
-  description: |
-    This template detects the use of biometric or fingerprint permissions in the Android application. The presence of `USE_FINGERPRINT` or `USE_BIOMETRIC` permissions indicates that the application uses fingerprint or other biometric data for authentication purposes. This information can help determine if the app is utilizing modern authentication methods for enhanced security.
-  remediation: |
-    Ensure that biometric authentication is implemented following best practices to prevent spoofing attacks. Use the latest `BiometricPrompt` API to leverage enhanced security features provided by Android for biometric authentication.
-    
+
 file:
   - extensions:
       - all
@@ -18,5 +14,3 @@ file:
         words:
           - "android.permission.USE_FINGERPRINT"
           - "android.permission.USE_BIOMETRIC"
-          - "BiometricPrompt"
-          - "FingerprintManager"
