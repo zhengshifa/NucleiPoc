@@ -29,5 +29,5 @@ requests:
 
       - type: word
         words:
-          - "# domain    path    name    value    date"
+          - "# domain	path	name	value	date"
         part: body

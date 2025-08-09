@@ -1,4 +1,4 @@
-id: news-2c7e8a9b250e2142b59be8871b785599
+id: news
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8f70c96c-5146-41d8-9d9c-7f2adb336049?source=api-scan
   classification:
     cvss-metrics: 

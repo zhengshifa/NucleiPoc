@@ -9,21 +9,15 @@ info:
     - https://blog.sorcery.ie/posts/adminer/
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
     cwe-id: CWE-200
-    cpe: cpe:2.3:a:adminer:adminer:*:*:*:*:*:*:*:*
+  # <= 4.2.4 can have unauthenticated RCE via SQLite driver
+  # <= 4.6.2 can have LFI via MySQL LOAD DATA LOCAL
+  # Most versions have some kind of SSRF usability
+  # Is generally handy if you find SQL creds
   metadata:
     max-request: 741
-    vendor: adminer
-    product: adminer
-    shodan-query:
-      - cpe:"cpe:2.3:a:adminer:adminer"
-      - http.title:"login - adminer"
-    fofa-query:
-      - title="login - adminer"
-      - app="adminer" && body="4.7.8"
-    hunter-query: app.name="adminer"&&web.body="4.7.8"
-    google-query: intitle:"login - adminer"
-  tags: panel,fuzz,adminer,login,sqli
+  tags: fuzz,adminer,login
 
 http:
   - raw:
@@ -57,4 +51,5 @@ http:
         group: 1
         regex:
           - '<span class="version">([0-9.]+)'
-# digest: 4b0a00483046022100a33af2d5ccddd23e8cbb62e3bea51d3a3c9b33713ec8cfce4f124231105a89e6022100c0300b40409d563efda7769a7d1b82088ca29941066d704ae460b532c6f0172e:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100e68319e1df84e5ea1938909ae5ad1c20c73041811c6b2f05a6b8ad1d0abd8c2f022079ef71d65ab71ebdbe2aaf5e858f0d7ef204d4d9b11da892414f1da2aa4718a3:922c64590222798bb761d5b6d8e72950
