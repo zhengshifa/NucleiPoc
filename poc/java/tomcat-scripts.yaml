@@ -4,7 +4,6 @@ info:
   name: Detect Tomcat Exposed Scripts
   author: Co0nan
   severity: info
-  tags: apache
 
 requests:
   - method: GET

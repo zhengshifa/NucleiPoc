@@ -1,11 +1,15 @@
 id: gitlab-public-signup
+
 info:
   name: GitLab public signup
   author: pdteam
   severity: info
-  tags: gitlab
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"GitLab"
+  tags: gitlab,misconfig
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/users/sign_in"
@@ -26,6 +30,6 @@ requests:
           - 200
 
       - type: word
+        negative: true
         words:
           - '<meta content="GitLab.com" property="og:description">'
-        negative: true

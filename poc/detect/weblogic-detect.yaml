@@ -9,6 +9,7 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/console/login/LoginForm.jsp"
+      - "{{BaseURL}}:7001/console/login/LoginForm.jsp"
 
     matchers:
       - type: word

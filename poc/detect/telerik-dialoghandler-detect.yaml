@@ -2,9 +2,9 @@ id: telerik-dialoghandler-detect
 info:
   name: Detect Telerik Web UI Dialog Handler
   author: organiccrap
-  severity: low
+  severity: info
   # https://captmeelo.com/pentest/2018/08/03/pwning-with-telerik.html
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/Telerik.Web.UI.DialogHandler.aspx'

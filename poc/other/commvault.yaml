@@ -1,19 +1,20 @@
 id: commvault
 info:
-  name: CommVault Galaxy data backup
-  author: nmap,cn-kali-team
-  tags: detect,tech,commvault,service
+  name: commvault
+  author: cn-kali-team
+  tags: detect,tech,commvault
   severity: info
   metadata:
-    rarity: 0
-tcp:
-- name: 'null'
-  inputs:
-  - data: ''
-  host:
-  - '{{Hostname}}'
-  extractors:
-  - name: commvault
-    type: regex
-    regex:
-    - ^\0\0\0\t\0\0\0\|\0\0\0
+    fofa-query:
+    - icon_hash="1209838013"
+    product: commvault
+    vendor: commvault
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: favicon
+    hash:
+    - '1209838013'
