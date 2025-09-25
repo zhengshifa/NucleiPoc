@@ -17,9 +17,12 @@ info:
     cvss-score: 7.5
     cve-id: CVE-2021-43798
     cwe-id: CWE-22
+    cpe: cpe:2.3:a:grafana:grafana:*:*:*:*:*:*:*:*
   metadata:
     max-request: 325
     shodan-query: title:"Grafana"
+    product: grafana
+    vendor: grafana
   tags: grafana,lfi
 
 http:
@@ -29,9 +32,9 @@ http:
 
     payloads:
       pluginSlug: helpers/wordlists/grafana-plugins.txt
-
     threads: 50
     stop-at-first-match: true
+
     matchers-condition: and
     matchers:
       - type: word
@@ -44,3 +47,4 @@ http:
       - type: status
         status:
           - 200
+# digest: 4a0a00473045022100f8b7e4d50c31f9a5bd8be34ec076151358f5dffa232ce78c4befd9103faee7e1022059583424d71128fb92461d20083f953aa6df30a2c6fbc52219cbd99bc5757bd7:922c64590222798bb761d5b6d8e72950

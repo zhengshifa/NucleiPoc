@@ -1,12 +1,13 @@
 id: jboss-web-console
+
 info:
   name: JBoss Management Console Server Information
   author: dhiyaneshDK
   severity: low
-  reference:
-    - https://www.exploit-db.com/ghdb/5215
+  reference: https://www.exploit-db.com/ghdb/5215
   tags: jboss,unauth
-requests:
+
+http:
   - method: GET
     path:
       - "{{BaseURL}}/web-console/ServerInfo.jsp"
@@ -17,6 +18,7 @@ requests:
           - "Application Server"
           - "Management Console"
         condition: and
+
       - type: status
         status:
           - 200

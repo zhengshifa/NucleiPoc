@@ -1,11 +1,9 @@
 id: Kingdee-file-list
-
 info:
   name: 金蝶OA 目录遍历漏洞
   author: Str1am
   severity: high
   tags: Kingdee,file
-
 requests:
   - method: GET
     path:
@@ -19,6 +17,6 @@ requests:
       - type: word
         words:
           - "Windows"
-          - "/kingdee"
+          - "/home"
         part: body
         condition: or

@@ -3,9 +3,9 @@ id: jolokia-instance
 info:
   name: Jolokia Version Disclosure
   author: mavericknerd & dwisiswant0
-  severity: info
+  severity: low
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/jolokia/version'

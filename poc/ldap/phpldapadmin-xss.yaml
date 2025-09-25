@@ -4,11 +4,16 @@ info:
   name: PHP LDAP Admin < 1.2.5 - Cross-Site Scripting
   author: GodfatherOrwa,herry
   severity: medium
+  description: PHP LDAP Admin is vulnerable to XSS.
   reference:
     - https://twitter.com/GodfatherOrwa/status/1701392754251563477
+  classification:
+    cpe: cpe:2.3:a:phpldapadmin_project:phpldapadmin:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 9
+    vendor: phpldapadmin_project
+    product: phpldapadmin
     shodan-query: html:"phpLDAPadmin"
   tags: php,phpldapadmin,xss
 
@@ -27,7 +32,6 @@ http:
         - /phpldapadmin
 
     stop-at-first-match: true
-    cookie-reuse: true
 
     matchers-condition: and
     matchers:
@@ -46,5 +50,4 @@ http:
       - type: status
         status:
           - 200
-
-# digest: 490a004630440220329a56d4d406c4bb9fa1dff944dbf2c69270061862c6688fdf0aa166a84120110220774f3cf42e8821facfbfc89d534d4c478896aa3677cd4824e6b03579586bfac8:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402202f4a2d5298b4ff5a2316dab8e198855a8ac48a5dbaec1ece5df562fdd9f6468d0220053f2ee37f5f3907007e94d6a22e49f6f935c953fc1a94d3a80e54dd07af29f9:922c64590222798bb761d5b6d8e72950

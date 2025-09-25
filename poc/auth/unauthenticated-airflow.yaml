@@ -3,24 +3,25 @@ id: unauthenticated-airflow-instance
 info:
   name: Unauthenticated Airflow Instance
   author: dhiyaneshDK
-  severity: high
+  severity: critical
+  metadata:
+    max-request: 2
+    shodan-query: title:"Airflow - DAGs"
+  tags: apache,airflow,unauth,misconfig
 
-requests:
+http:
   - method: GET
     path:
+      - "{{BaseURL}}"
       - "{{BaseURL}}/admin/"
-      - "{{BaseURL}}:8080/admin/"
-      - "{{BaseURL}}:8000/admin/"
-      - "{{BaseURL}}:9000/admin/"
-      - "{{BaseURL}}:9090/admin/"
-      - "{{BaseURL}}:3000/admin/"
 
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word
-        words:
-          - Airflow - DAGs
         part: body
+        words:
+          - "<title>Airflow - DAGs</title>"
 
       - type: status
         status:

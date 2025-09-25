@@ -8,16 +8,13 @@ info:
   reference:
     - https://github.com/pyn3rd/Spring-Boot-Vulnerability
   tags: springboot,exposure
-  metadata:
-    max-request: 2
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/heapdump"
       - "{{BaseURL}}/actuator/heapdump"
 
-    stop-at-first-match: true
     max-size: 2097152 # 2MB - Max Size to read from server response
     matchers-condition: and
     matchers:

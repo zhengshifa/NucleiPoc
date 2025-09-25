@@ -1,12 +1,9 @@
 id: eclipse-help-system-xss
-
 info:
   name: Eclipse Help System RXSS vulnerability
   author: pikpikcu
   severity: medium
-
-  # Source:- https://github.com/pikpikcu/nuclei-templates/blob/master/vulnerabilities/eclipse-xss.yaml
-
+  tags: ibm,xss
 requests:
   - method: GET
     path:
@@ -20,3 +17,7 @@ requests:
         words:
           - "<script>alert(document.cookie)</script>"
         part: body
+      - type: word
+        words:
+          - "text/html"
+        part: header

