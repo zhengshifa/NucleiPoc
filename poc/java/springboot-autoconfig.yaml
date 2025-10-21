@@ -3,7 +3,7 @@ id: springboot-autoconfig
 info:
   name: Detect Springboot autoconfig Actuator
   author: pussycat0x
-  severity: low
+  severity: high
   description: Displays an auto-configuration report showing all auto-configuration candidates and the reason why they 'were' or 'were not' applied.
   tags: springboot,exposure
 
@@ -13,7 +13,6 @@ requests:
       - "{{BaseURL}}/autoconfig"
       - "{{BaseURL}}/actuator/autoconfig"
 
-    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word
